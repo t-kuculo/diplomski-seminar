@@ -1,0 +1,1334 @@
+ machine learning
+ from wikipedia the free_encyclopedia
+
+ machine learning is the subfield of computer_science that gives_computers the ability to learn without_being explicitly_programmed evolved from the study of pattern_recognition and computational learning theory in artificial_intelligence machine learning explores the study and construction of algorithms that can learn from and make_predictions on data such algorithms overcome_following strictly_static program_instructions by making data driven_predictions or decisions_through building a model from sample_inputs machine learning is employed in a range of computing tasks where_designing and programming_explicit algorithms with good performance is difficult or infeasible_example applications include spam_filtering detection of network_intruders or malicious_insiders working_towards a data breach_optical character_recognition ocr_search engines and computer_vision
+
+ machine learning is closely_related to and often_overlaps with computational statistics which also focuses in predictionmaking_through the use of computers it has_strong ties to mathematical_optimization which_delivers methods theory and application_domains to the field machine learning is sometimes_conflated with data mining where the latter_subfield focuses more on exploratory data analysis and is known as unsupervised_learningvii machine learning can also be unsupervised and be used to learn and establish_baseline behavioral_profiles for various_entities and then used to find_meaningful anomalies
+
+ within the field of data analytics machine learning is a method used to devise_complex models and algorithms that lend_themselves to prediction in commercial_use this is known as predictive_analytics these_analytical models allow_researchers data scientists_engineers and analysts to produce_reliable repeatable_decisions and results and uncover_hidden insights_through learning from historical_relationships and trends in the data
+
+ overview
+
+ tom_m mitchell_provided a widely_quoted more_formal definition a computer program is said to learn from experience_e with_respect to some class of tasks_t and performance_measure p_if its performance at tasks in t as measured by p_improves with experience_e this definition is notable for its defining machine learning in fundamentally_operational rather_than cognitive_terms thus_following alan_turings proposal in his_paper computing_machinery and intelligence that the question_can machines_think be replaced with the question_can machines do_what we as thinking_entities can do in the proposal_he explores the various_characteristics that could be possessed by a thinking machine and the various_implications in constructing_one
+ types of problems and tasks
+
+ machine learning tasks are typically_classified into_three broad_categories depending on the nature of the learning signal or feedback_available to a learning system these are
+
+ supervised learning the computer is presented with example inputs and their desired_outputs given by a teacher and the goal is to learn a general rule that maps inputs to outputs
+ unsupervised learning no_labels are given to the learning algorithm_leaving it on its_own to find structure in its input unsupervised learning can be a goal in itself_discovering hidden_patterns in data or a means_towards an end_feature learning
+ reinforcement learning a computer program_interacts with a dynamic_environment in which it must_perform a certain goal such as driving a vehicle or playing a game_against an opponent the program is provided_feedback in terms of rewards and punishments as it navigates_its problem space
+
+ between supervised and unsupervised learning is semisupervised learning where the teacher_gives an incomplete training signal a training set with some often many of the target_outputs missing_transduction is a special_case of this_principle where the entire set of problem instances is known at learning time_except that part of the targets are missing
+
+ among_other categories of machine learning problems learning to learn learns its_own inductive_bias based_on previous_experience developmental learning elaborated for robot learning generates_its own_sequences also called_curriculum of learning situations to cumulatively_acquire repertoires of novel_skills through_autonomous selfexploration and social_interaction with human_teachers and using_guidance mechanisms_such as active learning maturation_motor synergies and imitation
+
+ another_categorization of machine learning tasks_arises when_one considers the desired_output of a machinelearned_system
+
+ in classification inputs are divided_into two or more classes and the learner_must produce a model that assigns_unseen inputs to one or more_multilabel classification of these classes this is typically_tackled in a supervised way spam_filtering is an example of classification where the inputs are email or other_messages and the classes are spam and not spam
+ in regression also a supervised problem the outputs are continuous_rather than_discrete
+ in clustering a set of inputs is to be divided_into groups_unlike in classification the groups are not known_beforehand making this typically an unsupervised task
+ density_estimation finds the distribution of inputs in some space
+ dimensionality_reduction simplifies_inputs by mapping_them into a lowerdimensional_space topic_modeling is a related problem where a program is given a list of human language_documents and is tasked to find out which documents_cover similar_topics
+
+ history and relationships to other fields
+
+ as a scientific_endeavour machine learning grew_out of the quest for artificial_intelligence already in the early_days of ai as an academic_discipline some researchers were_interested in having_machines learn from data they_attempted to approach the problem with various_symbolic methods as well as what_were then_termed neural_networks these were_mostly perceptrons and other models that were_later found to be reinventions of the generalized_linear models of statistics probabilistic_reasoning was also employed_especially in automated_medical diagnosis
+
+ however an increasing_emphasis on the logical_knowledgebased approach_caused a rift_between ai and machine learning probabilistic systems were_plagued by theoretical and practical_problems of data acquisition and representation by expert_systems had_come to dominate_ai and statistics was out of favor_work on symbolicknowledgebased learning did_continue within ai leading to inductive_logic programming but the more statistical_line of research was_now outside the field of ai_proper in pattern_recognition and information_retrieval neural_networks research_had been_abandoned by ai and computer_science around the same time this line_too was_continued outside the aics_field as connectionism by researchers from other_disciplines including_hopfield rumelhart and hinton_their main_success came in the mids with the reinvention of backpropagation
+
+ machine learning reorganized as a separate field_started to flourish in the s the field changed its goal from achieving_artificial intelligence to tackling_solvable problems of a practical_nature it shifted_focus away from the symbolic_approaches it had_inherited from ai and toward_methods and models_borrowed from statistics and probability theory it also_benefited from the increasing_availability of digitized_information and the possibility to distribute that via the internet
+
+ machine learning and data mining often_employ the same methods and overlap_significantly but while machine learning focuses on prediction_based on known properties_learned from the training data data mining focuses on the discovery of previously_unknown properties in the data this is the analysis step of knowledge discovery in databases data mining uses many machine learning methods but with different_goals on the other_hand machine learning also_employs data mining methods as unsupervised learning or as a preprocessing_step to improve learner accuracy_much of the confusion_between these two research_communities which do often have separate_conferences and separate_journals ecml_pkdd being a major_exception comes from the basic_assumptions they_work with in machine learning performance is usually_evaluated with_respect to the ability to reproduce_known knowledge while in knowledge discovery and data mining kdd the key_task is the discovery of previously_unknown knowledge evaluated with_respect to known knowledge an uninformed_unsupervised method will_easily be outperformed by other supervised methods while in a typical_kdd task supervised methods cannot be used_due to the unavailability of training data
+
+ machine learning also has_intimate ties to optimization many learning problems are formulated as minimization of some loss function on a training set of examples loss_functions express the discrepancy_between the predictions of the model being trained and the actual_problem instances for example in classification one_wants to assign a label to instances and models are trained to correctly_predict the preassigned_labels of a set examples the difference_between the two fields_arises from the goal of generalization while optimization algorithms can minimize the loss on a training set machine learning is concerned with minimizing the loss on unseen_samples
+ relation to statistics
+
+ machine learning and statistics are closely_related fields_according to michael_i jordan the ideas of machine learning from methodological_principles to theoretical_tools have had a long_prehistory in statistics he also_suggested the term data science as a placeholder to call the overall_field
+
+ leo_breiman distinguished_two statistical_modelling paradigms data model and algorithmic model wherein_algorithmic model means more or less the machine learning algorithms like_random forest
+
+ some_statisticians have_adopted methods from machine learning leading to a combined_field that they_call statistical learning
+ theory
+
+ a core_objective of a learner is to generalize from its experience generalization in this context is the ability of a learning machine to perform_accurately on new unseen_examplestasks after_having experienced a learning data set the training examples come from some generally_unknown probability_distribution considered_representative of the space of occurrences and the learner has to build a general model about this space that enables it to produce_sufficiently accurate_predictions in new_cases
+
+ the computational analysis of machine learning algorithms and their performance is a branch of theoretical computer_science known as computational learning theory because training sets are finite and the future is uncertain learning theory usually_does not_yield guarantees of the performance of algorithms instead_probabilistic bounds on the performance are quite_common the biasvariance_decomposition is one way to quantify_generalization error
+
+ for the best performance in the context of generalization the complexity of the hypothesis_should match the complexity of the function_underlying the data if the hypothesis is less_complex than the function then the model has_underfit the data if the complexity of the model is increased in response_then the training error_decreases but if the hypothesis is too_complex then the model is subject to overfitting and generalization will be poorer
+
+ in addition to performance bounds computational learning theorists_study the time_complexity and feasibility of learning in computational learning theory a computation is considered_feasible if it can be done in polynomial_time there are two_kinds of time_complexity results positive results_show that a certain_class of functions can be learned in polynomial_time negative results_show that certain classes cannot be learned in polynomial_time
+ approaches
+ decision_tree learning
+
+ decision_tree learning uses a decision_tree as a predictive model which maps_observations about an item to conclusions_about the items_target value
+ association_rule learning
+
+ association_rule learning is a method for discovering_interesting relations_between variables in large_databases
+ artificial_neural networks
+
+ an artificial_neural network_ann learning algorithm usually_called neural_network nn is a learning algorithm that is inspired by the structure and functional_aspects of biological_neural networks_computations are structured in terms of an interconnected_group of artificial_neurons processing_information using a connectionist_approach to computation_modern neural_networks are nonlinear_statistical data modeling_tools they are usually used to model complex relationships_between inputs and outputs to find patterns in data or to capture the statistical structure in an unknown_joint probability_distribution between observed_variables
+ deep learning
+
+ falling_hardware prices and the development of gpus for personal_use in the last_few years_have contributed to the development of the concept of deep learning which_consists of multiple_hidden layers in an artificial_neural network this approach_tries to model the way the human_brain processes_light and sound_into vision and hearing_some successful_applications of deep learning are computer_vision and speech recognition
+ inductive_logic programming
+
+ inductive_logic programming ilp is an approach to rule learning using logic_programming as a uniform_representation for input examples background_knowledge and hypotheses given an encoding of the known background_knowledge and a set of examples represented as a logical_database of facts an ilp_system will_derive a hypothesized_logic program that entails_all positive and no_negative examples inductive programming is a related field that considers_any kind of programming_languages for representing_hypotheses and not_only logic_programming such as functional_programs
+ support_vector machines
+
+ support_vector machines_svms are a set of related supervised learning methods used for classification and regression given a set of training examples each_marked as belonging to one of two categories an svm training algorithm_builds a model that predicts_whether a new example_falls into one_category or the other
+ clustering
+
+ cluster_analysis is the assignment of a set of observations into subsets_called clusters_so that observations_within the same_cluster are similar_according to some_predesignated criterion or criteria_while observations_drawn from different_clusters are dissimilar_different clustering_techniques make different_assumptions on the structure of the data often defined by some similarity_metric and evaluated for example by internal_compactness similarity between_members of the same_cluster and separation_between different_clusters other methods are based_on estimated_density and graph_connectivity clustering is a method of unsupervised learning and a common_technique for statistical data analysis
+ bayesian networks
+
+ a bayesian_network belief_network or directed_acyclic graphical model is a probabilistic_graphical model that represents a set of random_variables and their_conditional independencies_via a directed_acyclic graph_dag for example a bayesian_network could_represent the probabilistic relationships_between diseases and symptoms given symptoms the network can be used to compute the probabilities of the presence of various_diseases efficient algorithms exist that perform_inference and learning
+ reinforcement learning
+
+ reinforcement learning is concerned with how an agent_ought to take_actions in an environment_so as to maximize_some notion of longterm_reward reinforcement learning algorithms_attempt to find a policy that maps_states of the world to the actions the agent_ought to take in those_states reinforcement learning differs from the supervised learning problem in that correct_inputoutput pairs are never_presented nor_suboptimal actions_explicitly corrected
+ representation learning
+
+ several learning algorithms mostly unsupervised learning algorithms_aim at_discovering better_representations of the inputs provided_during training classical_examples include_principal components_analysis and cluster_analysis representation learning algorithms often attempt to preserve the information in their input but_transform it in a way that makes it useful_often as a preprocessing_step before_performing classification or predictions_allowing to reconstruct the inputs_coming from the unknown data generating_distribution while not being_necessarily faithful for configurations that are implausible_under that distribution
+
+ manifold learning algorithms_attempt to do_so under the constraint that the learned_representation is lowdimensional sparse_coding algorithms_attempt to do_so under the constraint that the learned_representation is sparse has many_zeros multilinear_subspace learning algorithms_aim to learn lowdimensional_representations directly from tensor_representations for multidimensional data without_reshaping them_into highdimensional_vectors deep learning algorithms discover_multiple levels of representation or a hierarchy of features with higherlevel_more abstract_features defined in terms of or generating_lowerlevel features it has_been argued that an intelligent machine is one that learns a representation that disentangles the underlying_factors of variation that explain the observed data
+ similarity and metric learning
+
+ in this problem the learning machine is given pairs of examples that are considered similar and pairs of less similar_objects it then_needs to learn a similarity function or a distance_metric function that can predict if new_objects are similar it is sometimes used in recommendation systems
+ sparse_dictionary learning
+
+ in this method a datum is represented as a linear_combination of basis_functions and the coefficients are assumed to be sparse_let x be a ddimensional_datum d be a d by n_matrix where each_column of d_represents a basis_function r is the coefficient to represent_x using d_mathematically sparse_dictionary learning means_solving x_≈ d r_displaystyle xapprox_dr displaystyle_xapprox dr where r is sparse generally_speaking n is assumed to be larger_than d to allow the freedom for a sparse representation
+
+ learning a dictionary along with sparse representations is strongly_nphard and also difficult to solve_approximately a popular_heuristic method for sparse_dictionary learning is ksvd
+
+ sparse_dictionary learning has_been applied in several_contexts in classification the problem is to determine_which classes a previously unseen datum_belongs to suppose a dictionary for each_class has already been built then a new datum is associated with the class such that its best_sparsely represented by the corresponding_dictionary sparse_dictionary learning has also been_applied in image_denoising the key_idea is that a clean_image patch can be sparsely_represented by an image dictionary but the noise_cannot
+ genetic algorithms
+
+ a genetic_algorithm ga is a search_heuristic that mimics the process of natural_selection and uses methods such as mutation and crossover to generate_new genotype in the hope of finding_good solutions to a given problem in machine learning genetic algorithms found some uses in the s and s_vice versa machine learning techniques have been used to improve the performance of genetic and evolutionary algorithms
+ rulebased machine learning
+
+ rulebased machine learning is a general_term for any machine learning method that identifies_learns or evolves_rules’ to store_manipulate or apply_knowledge the defining_characteristic of a rulebased machine learner is the identification and utilization of a set of relational_rules that collectively_represent the knowledge_captured by the system this is in contrast to other machine learners that commonly_identify a singular model that can be universally_applied to any_instance in order to make a prediction rulebased machine learning approaches_include learning classifier_systems association_rule learning and artificial_immune systems
+ learning classifier_systems
+
+ learning classifier_systems lcs are a family of rulebased machine learning algorithms that combine a discovery_component eg_typically a genetic_algorithm with a learning component_performing either_supervised learning reinforcement learning or unsupervised learning they_seek to identify a set of contextdependent_rules that collectively_store and apply_knowledge in a piecewise_manner in order to make_predictions
+ applications
+
+ applications for machine learning include
+
+ adaptive_websites
+ affective_computing
+ bioinformatics
+ brainmachine_interfaces
+ cheminformatics
+ classifying_dna sequences
+ computational_anatomy
+ computer_vision including_object recognition
+ detecting_credit card_fraud
+ game_playing
+ information_retrieval
+ internet_fraud detection
+ marketing
+ machine perception
+ medical_diagnosis
+ economics
+ natural_language processing
+ natural_language understanding
+ optimization and metaheuristic
+ online_advertising
+ recommender_systems
+ robot_locomotion
+ search_engines
+ sentiment_analysis or opinion_mining
+ sequence_mining
+ software_engineering
+ speech and handwriting_recognition
+ financial_market analysis
+ structural_health monitoring
+ syntactic_pattern recognition
+ user_behavior analytics
+ translation
+
+ in the online_movie company_netflix held the first_netflix prize_competition to find a program to better_predict user_preferences and improve the accuracy on its_existing cinematch_movie recommendation algorithm by at_least a joint_team made_up of researchers from att_labsresearch in collaboration with the teams_big chaos and pragmatic_theory built an ensemble model to win the grand_prize in for million_shortly after the prize was_awarded netflix_realized that viewers_ratings were not the best_indicators of their_viewing patterns_everything is a recommendation and they_changed their recommendation_engine accordingly
+
+ in the wall_street journal_wrote about_money management_firm rebellion_researchs use of machine learning to predict_economic movements the article_describes rebellion_researchs prediction of the financial_crisis and economic_recovery
+
+ in cofounder of sun_microsystems vinod_khosla predicted that of medical_doctors jobs_would be lost in the next_two decades to automated machine learning medical_diagnostic software
+
+ in it has_been reported that a machine learning algorithm has_been applied in art_history to study_fine art_paintings and that it may_have revealed_previously unrecognized_influences between_artists
+ model assessments
+
+ classification machine learning models can be validated by accuracy_estimation techniques_like the holdout method which splits the data in a training and test_set conventionally training set and test_set designation and evaluates the performance of the training model on the test_set in comparison the nfoldcrossvalidation_method randomly_splits the data in k_subsets where the k_instances of the data are used to train the model while the kth_instance is used to test the predictive_ability of the training model in addition to the holdout and crossvalidation_methods bootstrap_which samples_n instances with replacement from the dataset can be used to assess model accuracy in addition to accuracy_sensitivity and specificity_true positive_rate tpr and true_negative rate_tnr respectively can provide_modes of model assessment_similarly false_positive rate_fpr as well as the false_negative rate_fnr can be computed_receiver operating_characteristic roc_along with the accompanying_area under the roc_curve auc_offer additional_tools for classification model assessment_higher auc is associated with a better_performing model
+ ethics
+
+ machine learning poses a host of ethical_questions systems which are trained on datasets_collected with biases_may exhibit_these biases_upon use_thus digitizing_cultural prejudices_responsible collection of data thus is a critical_part of machine learning
+
+ because_language contains_biases machines trained on language_corpora will_necessarily also learn bias
+
+ see machine ethics for additional_information
+ machine learning
+ from wikipedia the free_encyclopedia
+
+ machine learning is the subfield of computer_science that gives_computers the ability to learn without_being explicitly_programmed evolved from the study of pattern_recognition and computational learning theory in artificial_intelligence machine learning explores the study and construction of algorithms that can learn from and make_predictions on data such algorithms overcome_following strictly_static program_instructions by making data driven_predictions or decisions_through building a model from sample_inputs machine learning is employed in a range of computing tasks where_designing and programming_explicit algorithms with good performance is difficult or infeasible_example applications include spam_filtering detection of network_intruders or malicious_insiders working_towards a data breach_optical character_recognition ocr_search engines and computer_vision
+
+ machine learning is closely_related to and often_overlaps with computational statistics which also focuses in predictionmaking_through the use of computers it has_strong ties to mathematical_optimization which_delivers methods theory and application_domains to the field machine learning is sometimes_conflated with data mining where the latter_subfield focuses more on exploratory data analysis and is known as unsupervised_learningvii machine learning can also be unsupervised and be used to learn and establish_baseline behavioral_profiles for various_entities and then used to find_meaningful anomalies
+
+ within the field of data analytics machine learning is a method used to devise_complex models and algorithms that lend_themselves to prediction in commercial_use this is known as predictive_analytics these_analytical models allow_researchers data scientists_engineers and analysts to produce_reliable repeatable_decisions and results and uncover_hidden insights_through learning from historical_relationships and trends in the data
+
+ overview
+
+ tom_m mitchell_provided a widely_quoted more_formal definition a computer program is said to learn from experience_e with_respect to some class of tasks_t and performance_measure p_if its performance at tasks in t as measured by p_improves with experience_e this definition is notable for its defining machine learning in fundamentally_operational rather_than cognitive_terms thus_following alan_turings proposal in his_paper computing_machinery and intelligence that the question_can machines_think be replaced with the question_can machines do_what we as thinking_entities can do in the proposal_he explores the various_characteristics that could be possessed by a thinking machine and the various_implications in constructing_one
+ types of problems and tasks
+
+ machine learning tasks are typically_classified into_three broad_categories depending on the nature of the learning signal or feedback_available to a learning system these are
+
+ supervised learning the computer is presented with example inputs and their desired_outputs given by a teacher and the goal is to learn a general rule that maps inputs to outputs
+ unsupervised learning no_labels are given to the learning algorithm_leaving it on its_own to find structure in its input unsupervised learning can be a goal in itself_discovering hidden_patterns in data or a means_towards an end_feature learning
+ reinforcement learning a computer program_interacts with a dynamic_environment in which it must_perform a certain goal such as driving a vehicle or playing a game_against an opponent the program is provided_feedback in terms of rewards and punishments as it navigates_its problem space
+
+ between supervised and unsupervised learning is semisupervised learning where the teacher_gives an incomplete training signal a training set with some often many of the target_outputs missing_transduction is a special_case of this_principle where the entire set of problem instances is known at learning time_except that part of the targets are missing
+
+ among_other categories of machine learning problems learning to learn learns its_own inductive_bias based_on previous_experience developmental learning elaborated for robot learning generates_its own_sequences also called_curriculum of learning situations to cumulatively_acquire repertoires of novel_skills through_autonomous selfexploration and social_interaction with human_teachers and using_guidance mechanisms_such as active learning maturation_motor synergies and imitation
+
+ another_categorization of machine learning tasks_arises when_one considers the desired_output of a machinelearned_system
+
+ in classification inputs are divided_into two or more classes and the learner_must produce a model that assigns_unseen inputs to one or more_multilabel classification of these classes this is typically_tackled in a supervised way spam_filtering is an example of classification where the inputs are email or other_messages and the classes are spam and not spam
+ in regression also a supervised problem the outputs are continuous_rather than_discrete
+ in clustering a set of inputs is to be divided_into groups_unlike in classification the groups are not known_beforehand making this typically an unsupervised task
+ density_estimation finds the distribution of inputs in some space
+ dimensionality_reduction simplifies_inputs by mapping_them into a lowerdimensional_space topic_modeling is a related problem where a program is given a list of human language_documents and is tasked to find out which documents_cover similar_topics
+
+ history and relationships to other fields
+
+ as a scientific_endeavour machine learning grew_out of the quest for artificial_intelligence already in the early_days of ai as an academic_discipline some researchers were_interested in having_machines learn from data they_attempted to approach the problem with various_symbolic methods as well as what_were then_termed neural_networks these were_mostly perceptrons and other models that were_later found to be reinventions of the generalized_linear models of statistics probabilistic_reasoning was also employed_especially in automated_medical diagnosis
+
+ however an increasing_emphasis on the logical_knowledgebased approach_caused a rift_between ai and machine learning probabilistic systems were_plagued by theoretical and practical_problems of data acquisition and representation by expert_systems had_come to dominate_ai and statistics was out of favor_work on symbolicknowledgebased learning did_continue within ai leading to inductive_logic programming but the more statistical_line of research was_now outside the field of ai_proper in pattern_recognition and information_retrieval neural_networks research_had been_abandoned by ai and computer_science around the same time this line_too was_continued outside the aics_field as connectionism by researchers from other_disciplines including_hopfield rumelhart and hinton_their main_success came in the mids with the reinvention of backpropagation
+
+ machine learning reorganized as a separate field_started to flourish in the s the field changed its goal from achieving_artificial intelligence to tackling_solvable problems of a practical_nature it shifted_focus away from the symbolic_approaches it had_inherited from ai and toward_methods and models_borrowed from statistics and probability theory it also_benefited from the increasing_availability of digitized_information and the possibility to distribute that via the internet
+
+ machine learning and data mining often_employ the same methods and overlap_significantly but while machine learning focuses on prediction_based on known properties_learned from the training data data mining focuses on the discovery of previously_unknown properties in the data this is the analysis step of knowledge discovery in databases data mining uses many machine learning methods but with different_goals on the other_hand machine learning also_employs data mining methods as unsupervised learning or as a preprocessing_step to improve learner accuracy_much of the confusion_between these two research_communities which do often have separate_conferences and separate_journals ecml_pkdd being a major_exception comes from the basic_assumptions they_work with in machine learning performance is usually_evaluated with_respect to the ability to reproduce_known knowledge while in knowledge discovery and data mining kdd the key_task is the discovery of previously_unknown knowledge evaluated with_respect to known knowledge an uninformed_unsupervised method will_easily be outperformed by other supervised methods while in a typical_kdd task supervised methods cannot be used_due to the unavailability of training data
+
+ machine learning also has_intimate ties to optimization many learning problems are formulated as minimization of some loss function on a training set of examples loss_functions express the discrepancy_between the predictions of the model being trained and the actual_problem instances for example in classification one_wants to assign a label to instances and models are trained to correctly_predict the preassigned_labels of a set examples the difference_between the two fields_arises from the goal of generalization while optimization algorithms can minimize the loss on a training set machine learning is concerned with minimizing the loss on unseen_samples
+ relation to statistics
+
+ machine learning and statistics are closely_related fields_according to michael_i jordan the ideas of machine learning from methodological_principles to theoretical_tools have had a long_prehistory in statistics he also_suggested the term data science as a placeholder to call the overall_field
+
+ leo_breiman distinguished_two statistical_modelling paradigms data model and algorithmic model wherein_algorithmic model means more or less the machine learning algorithms like_random forest
+
+ some_statisticians have_adopted methods from machine learning leading to a combined_field that they_call statistical learning
+ theory
+
+ a core_objective of a learner is to generalize from its experience generalization in this context is the ability of a learning machine to perform_accurately on new unseen_examplestasks after_having experienced a learning data set the training examples come from some generally_unknown probability_distribution considered_representative of the space of occurrences and the learner has to build a general model about this space that enables it to produce_sufficiently accurate_predictions in new_cases
+
+ the computational analysis of machine learning algorithms and their performance is a branch of theoretical computer_science known as computational learning theory because training sets are finite and the future is uncertain learning theory usually_does not_yield guarantees of the performance of algorithms instead_probabilistic bounds on the performance are quite_common the biasvariance_decomposition is one way to quantify_generalization error
+
+ for the best performance in the context of generalization the complexity of the hypothesis_should match the complexity of the function_underlying the data if the hypothesis is less_complex than the function then the model has_underfit the data if the complexity of the model is increased in response_then the training error_decreases but if the hypothesis is too_complex then the model is subject to overfitting and generalization will be poorer
+
+ in addition to performance bounds computational learning theorists_study the time_complexity and feasibility of learning in computational learning theory a computation is considered_feasible if it can be done in polynomial_time there are two_kinds of time_complexity results positive results_show that a certain_class of functions can be learned in polynomial_time negative results_show that certain classes cannot be learned in polynomial_time
+ approaches
+ decision_tree learning
+
+ decision_tree learning uses a decision_tree as a predictive model which maps_observations about an item to conclusions_about the items_target value
+ association_rule learning
+
+ association_rule learning is a method for discovering_interesting relations_between variables in large_databases
+ artificial_neural networks
+
+ an artificial_neural network_ann learning algorithm usually_called neural_network nn is a learning algorithm that is inspired by the structure and functional_aspects of biological_neural networks_computations are structured in terms of an interconnected_group of artificial_neurons processing_information using a connectionist_approach to computation_modern neural_networks are nonlinear_statistical data modeling_tools they are usually used to model complex relationships_between inputs and outputs to find patterns in data or to capture the statistical structure in an unknown_joint probability_distribution between observed_variables
+ deep learning
+
+ falling_hardware prices and the development of gpus for personal_use in the last_few years_have contributed to the development of the concept of deep learning which_consists of multiple_hidden layers in an artificial_neural network this approach_tries to model the way the human_brain processes_light and sound_into vision and hearing_some successful_applications of deep learning are computer_vision and speech recognition
+ inductive_logic programming
+
+ inductive_logic programming ilp is an approach to rule learning using logic_programming as a uniform_representation for input examples background_knowledge and hypotheses given an encoding of the known background_knowledge and a set of examples represented as a logical_database of facts an ilp_system will_derive a hypothesized_logic program that entails_all positive and no_negative examples inductive programming is a related field that considers_any kind of programming_languages for representing_hypotheses and not_only logic_programming such as functional_programs
+ support_vector machines
+
+ support_vector machines_svms are a set of related supervised learning methods used for classification and regression given a set of training examples each_marked as belonging to one of two categories an svm training algorithm_builds a model that predicts_whether a new example_falls into one_category or the other
+ clustering
+
+ cluster_analysis is the assignment of a set of observations into subsets_called clusters_so that observations_within the same_cluster are similar_according to some_predesignated criterion or criteria_while observations_drawn from different_clusters are dissimilar_different clustering_techniques make different_assumptions on the structure of the data often defined by some similarity_metric and evaluated for example by internal_compactness similarity between_members of the same_cluster and separation_between different_clusters other methods are based_on estimated_density and graph_connectivity clustering is a method of unsupervised learning and a common_technique for statistical data analysis
+ bayesian networks
+
+ a bayesian_network belief_network or directed_acyclic graphical model is a probabilistic_graphical model that represents a set of random_variables and their_conditional independencies_via a directed_acyclic graph_dag for example a bayesian_network could_represent the probabilistic relationships_between diseases and symptoms given symptoms the network can be used to compute the probabilities of the presence of various_diseases efficient algorithms exist that perform_inference and learning
+ reinforcement learning
+
+ reinforcement learning is concerned with how an agent_ought to take_actions in an environment_so as to maximize_some notion of longterm_reward reinforcement learning algorithms_attempt to find a policy that maps_states of the world to the actions the agent_ought to take in those_states reinforcement learning differs from the supervised learning problem in that correct_inputoutput pairs are never_presented nor_suboptimal actions_explicitly corrected
+ representation learning
+
+ several learning algorithms mostly unsupervised learning algorithms_aim at_discovering better_representations of the inputs provided_during training classical_examples include_principal components_analysis and cluster_analysis representation learning algorithms often attempt to preserve the information in their input but_transform it in a way that makes it useful_often as a preprocessing_step before_performing classification or predictions_allowing to reconstruct the inputs_coming from the unknown data generating_distribution while not being_necessarily faithful for configurations that are implausible_under that distribution
+
+ manifold learning algorithms_attempt to do_so under the constraint that the learned_representation is lowdimensional sparse_coding algorithms_attempt to do_so under the constraint that the learned_representation is sparse has many_zeros multilinear_subspace learning algorithms_aim to learn lowdimensional_representations directly from tensor_representations for multidimensional data without_reshaping them_into highdimensional_vectors deep learning algorithms discover_multiple levels of representation or a hierarchy of features with higherlevel_more abstract_features defined in terms of or generating_lowerlevel features it has_been argued that an intelligent machine is one that learns a representation that disentangles the underlying_factors of variation that explain the observed data
+ similarity and metric learning
+
+ in this problem the learning machine is given pairs of examples that are considered similar and pairs of less similar_objects it then_needs to learn a similarity function or a distance_metric function that can predict if new_objects are similar it is sometimes used in recommendation systems
+ sparse_dictionary learning
+
+ in this method a datum is represented as a linear_combination of basis_functions and the coefficients are assumed to be sparse_let x be a ddimensional_datum d be a d by n_matrix where each_column of d_represents a basis_function r is the coefficient to represent_x using d_mathematically sparse_dictionary learning means_solving x_≈ d r_displaystyle xapprox_dr displaystyle_xapprox dr where r is sparse generally_speaking n is assumed to be larger_than d to allow the freedom for a sparse representation
+
+ learning a dictionary along with sparse representations is strongly_nphard and also difficult to solve_approximately a popular_heuristic method for sparse_dictionary learning is ksvd
+
+ sparse_dictionary learning has_been applied in several_contexts in classification the problem is to determine_which classes a previously unseen datum_belongs to suppose a dictionary for each_class has already been built then a new datum is associated with the class such that its best_sparsely represented by the corresponding_dictionary sparse_dictionary learning has also been_applied in image_denoising the key_idea is that a clean_image patch can be sparsely_represented by an image dictionary but the noise_cannot
+ genetic algorithms
+
+ a genetic_algorithm ga is a search_heuristic that mimics the process of natural_selection and uses methods such as mutation and crossover to generate_new genotype in the hope of finding_good solutions to a given problem in machine learning genetic algorithms found some uses in the s and s_vice versa machine learning techniques have been used to improve the performance of genetic and evolutionary algorithms
+ rulebased machine learning
+
+ rulebased machine learning is a general_term for any machine learning method that identifies_learns or evolves_rules’ to store_manipulate or apply_knowledge the defining_characteristic of a rulebased machine learner is the identification and utilization of a set of relational_rules that collectively_represent the knowledge_captured by the system this is in contrast to other machine learners that commonly_identify a singular model that can be universally_applied to any_instance in order to make a prediction rulebased machine learning approaches_include learning classifier_systems association_rule learning and artificial_immune systems
+ learning classifier_systems
+
+ learning classifier_systems lcs are a family of rulebased machine learning algorithms that combine a discovery_component eg_typically a genetic_algorithm with a learning component_performing either_supervised learning reinforcement learning or unsupervised learning they_seek to identify a set of contextdependent_rules that collectively_store and apply_knowledge in a piecewise_manner in order to make_predictions
+ applications
+
+ applications for machine learning include
+
+ adaptive_websites
+ affective_computing
+ bioinformatics
+ brainmachine_interfaces
+ cheminformatics
+ classifying_dna sequences
+ computational_anatomy
+ computer_vision including_object recognition
+ detecting_credit card_fraud
+ game_playing
+ information_retrieval
+ internet_fraud detection
+ marketing
+ machine perception
+ medical_diagnosis
+ economics
+ natural_language processing
+ natural_language understanding
+ optimization and metaheuristic
+ online_advertising
+ recommender_systems
+ robot_locomotion
+ search_engines
+ sentiment_analysis or opinion_mining
+ sequence_mining
+ software_engineering
+ speech and handwriting_recognition
+ financial_market analysis
+ structural_health monitoring
+ syntactic_pattern recognition
+ user_behavior analytics
+ translation
+
+ in the online_movie company_netflix held the first_netflix prize_competition to find a program to better_predict user_preferences and improve the accuracy on its_existing cinematch_movie recommendation algorithm by at_least a joint_team made_up of researchers from att_labsresearch in collaboration with the teams_big chaos and pragmatic_theory built an ensemble model to win the grand_prize in for million_shortly after the prize was_awarded netflix_realized that viewers_ratings were not the best_indicators of their_viewing patterns_everything is a recommendation and they_changed their recommendation_engine accordingly
+
+ in the wall_street journal_wrote about_money management_firm rebellion_researchs use of machine learning to predict_economic movements the article_describes rebellion_researchs prediction of the financial_crisis and economic_recovery
+
+ in cofounder of sun_microsystems vinod_khosla predicted that of medical_doctors jobs_would be lost in the next_two decades to automated machine learning medical_diagnostic software
+
+ in it has_been reported that a machine learning algorithm has_been applied in art_history to study_fine art_paintings and that it may_have revealed_previously unrecognized_influences between_artists
+ model assessments
+
+ classification machine learning models can be validated by accuracy_estimation techniques_like the holdout method which splits the data in a training and test_set conventionally training set and test_set designation and evaluates the performance of the training model on the test_set in comparison the nfoldcrossvalidation_method randomly_splits the data in k_subsets where the k_instances of the data are used to train the model while the kth_instance is used to test the predictive_ability of the training model in addition to the holdout and crossvalidation_methods bootstrap_which samples_n instances with replacement from the dataset can be used to assess model accuracy in addition to accuracy_sensitivity and specificity_true positive_rate tpr and true_negative rate_tnr respectively can provide_modes of model assessment_similarly false_positive rate_fpr as well as the false_negative rate_fnr can be computed_receiver operating_characteristic roc_along with the accompanying_area under the roc_curve auc_offer additional_tools for classification model assessment_higher auc is associated with a better_performing model
+ ethics
+
+ machine learning poses a host of ethical_questions systems which are trained on datasets_collected with biases_may exhibit_these biases_upon use_thus digitizing_cultural prejudices_responsible collection of data thus is a critical_part of machine learning
+
+ because_language contains_biases machines trained on language_corpora will_necessarily also learn bias
+
+ see machine ethics for additional_information
+ machine learning
+ from wikipedia the free_encyclopedia
+
+ machine learning is the subfield of computer_science that gives_computers the ability to learn without_being explicitly_programmed evolved from the study of pattern_recognition and computational learning theory in artificial_intelligence machine learning explores the study and construction of algorithms that can learn from and make_predictions on data such algorithms overcome_following strictly_static program_instructions by making data driven_predictions or decisions_through building a model from sample_inputs machine learning is employed in a range of computing tasks where_designing and programming_explicit algorithms with good performance is difficult or infeasible_example applications include spam_filtering detection of network_intruders or malicious_insiders working_towards a data breach_optical character_recognition ocr_search engines and computer_vision
+
+ machine learning is closely_related to and often_overlaps with computational statistics which also focuses in predictionmaking_through the use of computers it has_strong ties to mathematical_optimization which_delivers methods theory and application_domains to the field machine learning is sometimes_conflated with data mining where the latter_subfield focuses more on exploratory data analysis and is known as unsupervised_learningvii machine learning can also be unsupervised and be used to learn and establish_baseline behavioral_profiles for various_entities and then used to find_meaningful anomalies
+
+ within the field of data analytics machine learning is a method used to devise_complex models and algorithms that lend_themselves to prediction in commercial_use this is known as predictive_analytics these_analytical models allow_researchers data scientists_engineers and analysts to produce_reliable repeatable_decisions and results and uncover_hidden insights_through learning from historical_relationships and trends in the data
+
+ overview
+
+ tom_m mitchell_provided a widely_quoted more_formal definition a computer program is said to learn from experience_e with_respect to some class of tasks_t and performance_measure p_if its performance at tasks in t as measured by p_improves with experience_e this definition is notable for its defining machine learning in fundamentally_operational rather_than cognitive_terms thus_following alan_turings proposal in his_paper computing_machinery and intelligence that the question_can machines_think be replaced with the question_can machines do_what we as thinking_entities can do in the proposal_he explores the various_characteristics that could be possessed by a thinking machine and the various_implications in constructing_one
+ types of problems and tasks
+
+ machine learning tasks are typically_classified into_three broad_categories depending on the nature of the learning signal or feedback_available to a learning system these are
+
+ supervised learning the computer is presented with example inputs and their desired_outputs given by a teacher and the goal is to learn a general rule that maps inputs to outputs
+ unsupervised learning no_labels are given to the learning algorithm_leaving it on its_own to find structure in its input unsupervised learning can be a goal in itself_discovering hidden_patterns in data or a means_towards an end_feature learning
+ reinforcement learning a computer program_interacts with a dynamic_environment in which it must_perform a certain goal such as driving a vehicle or playing a game_against an opponent the program is provided_feedback in terms of rewards and punishments as it navigates_its problem space
+
+ between supervised and unsupervised learning is semisupervised learning where the teacher_gives an incomplete training signal a training set with some often many of the target_outputs missing_transduction is a special_case of this_principle where the entire set of problem instances is known at learning time_except that part of the targets are missing
+
+ among_other categories of machine learning problems learning to learn learns its_own inductive_bias based_on previous_experience developmental learning elaborated for robot learning generates_its own_sequences also called_curriculum of learning situations to cumulatively_acquire repertoires of novel_skills through_autonomous selfexploration and social_interaction with human_teachers and using_guidance mechanisms_such as active learning maturation_motor synergies and imitation
+
+ another_categorization of machine learning tasks_arises when_one considers the desired_output of a machinelearned_system
+
+ in classification inputs are divided_into two or more classes and the learner_must produce a model that assigns_unseen inputs to one or more_multilabel classification of these classes this is typically_tackled in a supervised way spam_filtering is an example of classification where the inputs are email or other_messages and the classes are spam and not spam
+ in regression also a supervised problem the outputs are continuous_rather than_discrete
+ in clustering a set of inputs is to be divided_into groups_unlike in classification the groups are not known_beforehand making this typically an unsupervised task
+ density_estimation finds the distribution of inputs in some space
+ dimensionality_reduction simplifies_inputs by mapping_them into a lowerdimensional_space topic_modeling is a related problem where a program is given a list of human language_documents and is tasked to find out which documents_cover similar_topics
+
+ history and relationships to other fields
+
+ as a scientific_endeavour machine learning grew_out of the quest for artificial_intelligence already in the early_days of ai as an academic_discipline some researchers were_interested in having_machines learn from data they_attempted to approach the problem with various_symbolic methods as well as what_were then_termed neural_networks these were_mostly perceptrons and other models that were_later found to be reinventions of the generalized_linear models of statistics probabilistic_reasoning was also employed_especially in automated_medical diagnosis
+
+ however an increasing_emphasis on the logical_knowledgebased approach_caused a rift_between ai and machine learning probabilistic systems were_plagued by theoretical and practical_problems of data acquisition and representation by expert_systems had_come to dominate_ai and statistics was out of favor_work on symbolicknowledgebased learning did_continue within ai leading to inductive_logic programming but the more statistical_line of research was_now outside the field of ai_proper in pattern_recognition and information_retrieval neural_networks research_had been_abandoned by ai and computer_science around the same time this line_too was_continued outside the aics_field as connectionism by researchers from other_disciplines including_hopfield rumelhart and hinton_their main_success came in the mids with the reinvention of backpropagation
+
+ machine learning reorganized as a separate field_started to flourish in the s the field changed its goal from achieving_artificial intelligence to tackling_solvable problems of a practical_nature it shifted_focus away from the symbolic_approaches it had_inherited from ai and toward_methods and models_borrowed from statistics and probability theory it also_benefited from the increasing_availability of digitized_information and the possibility to distribute that via the internet
+
+ machine learning and data mining often_employ the same methods and overlap_significantly but while machine learning focuses on prediction_based on known properties_learned from the training data data mining focuses on the discovery of previously_unknown properties in the data this is the analysis step of knowledge discovery in databases data mining uses many machine learning methods but with different_goals on the other_hand machine learning also_employs data mining methods as unsupervised learning or as a preprocessing_step to improve learner accuracy_much of the confusion_between these two research_communities which do often have separate_conferences and separate_journals ecml_pkdd being a major_exception comes from the basic_assumptions they_work with in machine learning performance is usually_evaluated with_respect to the ability to reproduce_known knowledge while in knowledge discovery and data mining kdd the key_task is the discovery of previously_unknown knowledge evaluated with_respect to known knowledge an uninformed_unsupervised method will_easily be outperformed by other supervised methods while in a typical_kdd task supervised methods cannot be used_due to the unavailability of training data
+
+ machine learning also has_intimate ties to optimization many learning problems are formulated as minimization of some loss function on a training set of examples loss_functions express the discrepancy_between the predictions of the model being trained and the actual_problem instances for example in classification one_wants to assign a label to instances and models are trained to correctly_predict the preassigned_labels of a set examples the difference_between the two fields_arises from the goal of generalization while optimization algorithms can minimize the loss on a training set machine learning is concerned with minimizing the loss on unseen_samples
+ relation to statistics
+
+ machine learning and statistics are closely_related fields_according to michael_i jordan the ideas of machine learning from methodological_principles to theoretical_tools have had a long_prehistory in statistics he also_suggested the term data science as a placeholder to call the overall_field
+
+ leo_breiman distinguished_two statistical_modelling paradigms data model and algorithmic model wherein_algorithmic model means more or less the machine learning algorithms like_random forest
+
+ some_statisticians have_adopted methods from machine learning leading to a combined_field that they_call statistical learning
+ theory
+
+ a core_objective of a learner is to generalize from its experience generalization in this context is the ability of a learning machine to perform_accurately on new unseen_examplestasks after_having experienced a learning data set the training examples come from some generally_unknown probability_distribution considered_representative of the space of occurrences and the learner has to build a general model about this space that enables it to produce_sufficiently accurate_predictions in new_cases
+
+ the computational analysis of machine learning algorithms and their performance is a branch of theoretical computer_science known as computational learning theory because training sets are finite and the future is uncertain learning theory usually_does not_yield guarantees of the performance of algorithms instead_probabilistic bounds on the performance are quite_common the biasvariance_decomposition is one way to quantify_generalization error
+
+ for the best performance in the context of generalization the complexity of the hypothesis_should match the complexity of the function_underlying the data if the hypothesis is less_complex than the function then the model has_underfit the data if the complexity of the model is increased in response_then the training error_decreases but if the hypothesis is too_complex then the model is subject to overfitting and generalization will be poorer
+
+ in addition to performance bounds computational learning theorists_study the time_complexity and feasibility of learning in computational learning theory a computation is considered_feasible if it can be done in polynomial_time there are two_kinds of time_complexity results positive results_show that a certain_class of functions can be learned in polynomial_time negative results_show that certain classes cannot be learned in polynomial_time
+ approaches
+ decision_tree learning
+
+ decision_tree learning uses a decision_tree as a predictive model which maps_observations about an item to conclusions_about the items_target value
+ association_rule learning
+
+ association_rule learning is a method for discovering_interesting relations_between variables in large_databases
+ artificial_neural networks
+
+ an artificial_neural network_ann learning algorithm usually_called neural_network nn is a learning algorithm that is inspired by the structure and functional_aspects of biological_neural networks_computations are structured in terms of an interconnected_group of artificial_neurons processing_information using a connectionist_approach to computation_modern neural_networks are nonlinear_statistical data modeling_tools they are usually used to model complex relationships_between inputs and outputs to find patterns in data or to capture the statistical structure in an unknown_joint probability_distribution between observed_variables
+ deep learning
+
+ falling_hardware prices and the development of gpus for personal_use in the last_few years_have contributed to the development of the concept of deep learning which_consists of multiple_hidden layers in an artificial_neural network this approach_tries to model the way the human_brain processes_light and sound_into vision and hearing_some successful_applications of deep learning are computer_vision and speech recognition
+ inductive_logic programming
+
+ inductive_logic programming ilp is an approach to rule learning using logic_programming as a uniform_representation for input examples background_knowledge and hypotheses given an encoding of the known background_knowledge and a set of examples represented as a logical_database of facts an ilp_system will_derive a hypothesized_logic program that entails_all positive and no_negative examples inductive programming is a related field that considers_any kind of programming_languages for representing_hypotheses and not_only logic_programming such as functional_programs
+ support_vector machines
+
+ support_vector machines_svms are a set of related supervised learning methods used for classification and regression given a set of training examples each_marked as belonging to one of two categories an svm training algorithm_builds a model that predicts_whether a new example_falls into one_category or the other
+ clustering
+
+ cluster_analysis is the assignment of a set of observations into subsets_called clusters_so that observations_within the same_cluster are similar_according to some_predesignated criterion or criteria_while observations_drawn from different_clusters are dissimilar_different clustering_techniques make different_assumptions on the structure of the data often defined by some similarity_metric and evaluated for example by internal_compactness similarity between_members of the same_cluster and separation_between different_clusters other methods are based_on estimated_density and graph_connectivity clustering is a method of unsupervised learning and a common_technique for statistical data analysis
+ bayesian networks
+
+ a bayesian_network belief_network or directed_acyclic graphical model is a probabilistic_graphical model that represents a set of random_variables and their_conditional independencies_via a directed_acyclic graph_dag for example a bayesian_network could_represent the probabilistic relationships_between diseases and symptoms given symptoms the network can be used to compute the probabilities of the presence of various_diseases efficient algorithms exist that perform_inference and learning
+ reinforcement learning
+
+ reinforcement learning is concerned with how an agent_ought to take_actions in an environment_so as to maximize_some notion of longterm_reward reinforcement learning algorithms_attempt to find a policy that maps_states of the world to the actions the agent_ought to take in those_states reinforcement learning differs from the supervised learning problem in that correct_inputoutput pairs are never_presented nor_suboptimal actions_explicitly corrected
+ representation learning
+
+ several learning algorithms mostly unsupervised learning algorithms_aim at_discovering better_representations of the inputs provided_during training classical_examples include_principal components_analysis and cluster_analysis representation learning algorithms often attempt to preserve the information in their input but_transform it in a way that makes it useful_often as a preprocessing_step before_performing classification or predictions_allowing to reconstruct the inputs_coming from the unknown data generating_distribution while not being_necessarily faithful for configurations that are implausible_under that distribution
+
+ manifold learning algorithms_attempt to do_so under the constraint that the learned_representation is lowdimensional sparse_coding algorithms_attempt to do_so under the constraint that the learned_representation is sparse has many_zeros multilinear_subspace learning algorithms_aim to learn lowdimensional_representations directly from tensor_representations for multidimensional data without_reshaping them_into highdimensional_vectors deep learning algorithms discover_multiple levels of representation or a hierarchy of features with higherlevel_more abstract_features defined in terms of or generating_lowerlevel features it has_been argued that an intelligent machine is one that learns a representation that disentangles the underlying_factors of variation that explain the observed data
+ similarity and metric learning
+
+ in this problem the learning machine is given pairs of examples that are considered similar and pairs of less similar_objects it then_needs to learn a similarity function or a distance_metric function that can predict if new_objects are similar it is sometimes used in recommendation systems
+ sparse_dictionary learning
+
+ in this method a datum is represented as a linear_combination of basis_functions and the coefficients are assumed to be sparse_let x be a ddimensional_datum d be a d by n_matrix where each_column of d_represents a basis_function r is the coefficient to represent_x using d_mathematically sparse_dictionary learning means_solving x_≈ d r_displaystyle xapprox_dr displaystyle_xapprox dr where r is sparse generally_speaking n is assumed to be larger_than d to allow the freedom for a sparse representation
+
+ learning a dictionary along with sparse representations is strongly_nphard and also difficult to solve_approximately a popular_heuristic method for sparse_dictionary learning is ksvd
+
+ sparse_dictionary learning has_been applied in several_contexts in classification the problem is to determine_which classes a previously unseen datum_belongs to suppose a dictionary for each_class has already been built then a new datum is associated with the class such that its best_sparsely represented by the corresponding_dictionary sparse_dictionary learning has also been_applied in image_denoising the key_idea is that a clean_image patch can be sparsely_represented by an image dictionary but the noise_cannot
+ genetic algorithms
+
+ a genetic_algorithm ga is a search_heuristic that mimics the process of natural_selection and uses methods such as mutation and crossover to generate_new genotype in the hope of finding_good solutions to a given problem in machine learning genetic algorithms found some uses in the s and s_vice versa machine learning techniques have been used to improve the performance of genetic and evolutionary algorithms
+ rulebased machine learning
+
+ rulebased machine learning is a general_term for any machine learning method that identifies_learns or evolves_rules’ to store_manipulate or apply_knowledge the defining_characteristic of a rulebased machine learner is the identification and utilization of a set of relational_rules that collectively_represent the knowledge_captured by the system this is in contrast to other machine learners that commonly_identify a singular model that can be universally_applied to any_instance in order to make a prediction rulebased machine learning approaches_include learning classifier_systems association_rule learning and artificial_immune systems
+ learning classifier_systems
+
+ learning classifier_systems lcs are a family of rulebased machine learning algorithms that combine a discovery_component eg_typically a genetic_algorithm with a learning component_performing either_supervised learning reinforcement learning or unsupervised learning they_seek to identify a set of contextdependent_rules that collectively_store and apply_knowledge in a piecewise_manner in order to make_predictions
+ applications
+
+ applications for machine learning include
+
+ adaptive_websites
+ affective_computing
+ bioinformatics
+ brainmachine_interfaces
+ cheminformatics
+ classifying_dna sequences
+ computational_anatomy
+ computer_vision including_object recognition
+ detecting_credit card_fraud
+ game_playing
+ information_retrieval
+ internet_fraud detection
+ marketing
+ machine perception
+ medical_diagnosis
+ economics
+ natural_language processing
+ natural_language understanding
+ optimization and metaheuristic
+ online_advertising
+ recommender_systems
+ robot_locomotion
+ search_engines
+ sentiment_analysis or opinion_mining
+ sequence_mining
+ software_engineering
+ speech and handwriting_recognition
+ financial_market analysis
+ structural_health monitoring
+ syntactic_pattern recognition
+ user_behavior analytics
+ translation
+
+ in the online_movie company_netflix held the first_netflix prize_competition to find a program to better_predict user_preferences and improve the accuracy on its_existing cinematch_movie recommendation algorithm by at_least a joint_team made_up of researchers from att_labsresearch in collaboration with the teams_big chaos and pragmatic_theory built an ensemble model to win the grand_prize in for million_shortly after the prize was_awarded netflix_realized that viewers_ratings were not the best_indicators of their_viewing patterns_everything is a recommendation and they_changed their recommendation_engine accordingly
+
+ in the wall_street journal_wrote about_money management_firm rebellion_researchs use of machine learning to predict_economic movements the article_describes rebellion_researchs prediction of the financial_crisis and economic_recovery
+
+ in cofounder of sun_microsystems vinod_khosla predicted that of medical_doctors jobs_would be lost in the next_two decades to automated machine learning medical_diagnostic software
+
+ in it has_been reported that a machine learning algorithm has_been applied in art_history to study_fine art_paintings and that it may_have revealed_previously unrecognized_influences between_artists
+ model assessments
+
+ classification machine learning models can be validated by accuracy_estimation techniques_like the holdout method which splits the data in a training and test_set conventionally training set and test_set designation and evaluates the performance of the training model on the test_set in comparison the nfoldcrossvalidation_method randomly_splits the data in k_subsets where the k_instances of the data are used to train the model while the kth_instance is used to test the predictive_ability of the training model in addition to the holdout and crossvalidation_methods bootstrap_which samples_n instances with replacement from the dataset can be used to assess model accuracy in addition to accuracy_sensitivity and specificity_true positive_rate tpr and true_negative rate_tnr respectively can provide_modes of model assessment_similarly false_positive rate_fpr as well as the false_negative rate_fnr can be computed_receiver operating_characteristic roc_along with the accompanying_area under the roc_curve auc_offer additional_tools for classification model assessment_higher auc is associated with a better_performing model
+ ethics
+
+ machine learning poses a host of ethical_questions systems which are trained on datasets_collected with biases_may exhibit_these biases_upon use_thus digitizing_cultural prejudices_responsible collection of data thus is a critical_part of machine learning
+
+ because_language contains_biases machines trained on language_corpora will_necessarily also learn bias
+
+ see machine ethics for additional_information
+ machine learning
+ from wikipedia the free_encyclopedia
+
+ machine learning is the subfield of computer_science that gives_computers the ability to learn without_being explicitly_programmed evolved from the study of pattern_recognition and computational learning theory in artificial_intelligence machine learning explores the study and construction of algorithms that can learn from and make_predictions on data such algorithms overcome_following strictly_static program_instructions by making data driven_predictions or decisions_through building a model from sample_inputs machine learning is employed in a range of computing tasks where_designing and programming_explicit algorithms with good performance is difficult or infeasible_example applications include spam_filtering detection of network_intruders or malicious_insiders working_towards a data breach_optical character_recognition ocr_search engines and computer_vision
+
+ machine learning is closely_related to and often_overlaps with computational statistics which also focuses in predictionmaking_through the use of computers it has_strong ties to mathematical_optimization which_delivers methods theory and application_domains to the field machine learning is sometimes_conflated with data mining where the latter_subfield focuses more on exploratory data analysis and is known as unsupervised_learningvii machine learning can also be unsupervised and be used to learn and establish_baseline behavioral_profiles for various_entities and then used to find_meaningful anomalies
+
+ within the field of data analytics machine learning is a method used to devise_complex models and algorithms that lend_themselves to prediction in commercial_use this is known as predictive_analytics these_analytical models allow_researchers data scientists_engineers and analysts to produce_reliable repeatable_decisions and results and uncover_hidden insights_through learning from historical_relationships and trends in the data
+
+ overview
+
+ tom_m mitchell_provided a widely_quoted more_formal definition a computer program is said to learn from experience_e with_respect to some class of tasks_t and performance_measure p_if its performance at tasks in t as measured by p_improves with experience_e this definition is notable for its defining machine learning in fundamentally_operational rather_than cognitive_terms thus_following alan_turings proposal in his_paper computing_machinery and intelligence that the question_can machines_think be replaced with the question_can machines do_what we as thinking_entities can do in the proposal_he explores the various_characteristics that could be possessed by a thinking machine and the various_implications in constructing_one
+ types of problems and tasks
+
+ machine learning tasks are typically_classified into_three broad_categories depending on the nature of the learning signal or feedback_available to a learning system these are
+
+ supervised learning the computer is presented with example inputs and their desired_outputs given by a teacher and the goal is to learn a general rule that maps inputs to outputs
+ unsupervised learning no_labels are given to the learning algorithm_leaving it on its_own to find structure in its input unsupervised learning can be a goal in itself_discovering hidden_patterns in data or a means_towards an end_feature learning
+ reinforcement learning a computer program_interacts with a dynamic_environment in which it must_perform a certain goal such as driving a vehicle or playing a game_against an opponent the program is provided_feedback in terms of rewards and punishments as it navigates_its problem space
+
+ between supervised and unsupervised learning is semisupervised learning where the teacher_gives an incomplete training signal a training set with some often many of the target_outputs missing_transduction is a special_case of this_principle where the entire set of problem instances is known at learning time_except that part of the targets are missing
+
+ among_other categories of machine learning problems learning to learn learns its_own inductive_bias based_on previous_experience developmental learning elaborated for robot learning generates_its own_sequences also called_curriculum of learning situations to cumulatively_acquire repertoires of novel_skills through_autonomous selfexploration and social_interaction with human_teachers and using_guidance mechanisms_such as active learning maturation_motor synergies and imitation
+
+ another_categorization of machine learning tasks_arises when_one considers the desired_output of a machinelearned_system
+
+ in classification inputs are divided_into two or more classes and the learner_must produce a model that assigns_unseen inputs to one or more_multilabel classification of these classes this is typically_tackled in a supervised way spam_filtering is an example of classification where the inputs are email or other_messages and the classes are spam and not spam
+ in regression also a supervised problem the outputs are continuous_rather than_discrete
+ in clustering a set of inputs is to be divided_into groups_unlike in classification the groups are not known_beforehand making this typically an unsupervised task
+ density_estimation finds the distribution of inputs in some space
+ dimensionality_reduction simplifies_inputs by mapping_them into a lowerdimensional_space topic_modeling is a related problem where a program is given a list of human language_documents and is tasked to find out which documents_cover similar_topics
+
+ history and relationships to other fields
+
+ as a scientific_endeavour machine learning grew_out of the quest for artificial_intelligence already in the early_days of ai as an academic_discipline some researchers were_interested in having_machines learn from data they_attempted to approach the problem with various_symbolic methods as well as what_were then_termed neural_networks these were_mostly perceptrons and other models that were_later found to be reinventions of the generalized_linear models of statistics probabilistic_reasoning was also employed_especially in automated_medical diagnosis
+
+ however an increasing_emphasis on the logical_knowledgebased approach_caused a rift_between ai and machine learning probabilistic systems were_plagued by theoretical and practical_problems of data acquisition and representation by expert_systems had_come to dominate_ai and statistics was out of favor_work on symbolicknowledgebased learning did_continue within ai leading to inductive_logic programming but the more statistical_line of research was_now outside the field of ai_proper in pattern_recognition and information_retrieval neural_networks research_had been_abandoned by ai and computer_science around the same time this line_too was_continued outside the aics_field as connectionism by researchers from other_disciplines including_hopfield rumelhart and hinton_their main_success came in the mids with the reinvention of backpropagation
+
+ machine learning reorganized as a separate field_started to flourish in the s the field changed its goal from achieving_artificial intelligence to tackling_solvable problems of a practical_nature it shifted_focus away from the symbolic_approaches it had_inherited from ai and toward_methods and models_borrowed from statistics and probability theory it also_benefited from the increasing_availability of digitized_information and the possibility to distribute that via the internet
+
+ machine learning and data mining often_employ the same methods and overlap_significantly but while machine learning focuses on prediction_based on known properties_learned from the training data data mining focuses on the discovery of previously_unknown properties in the data this is the analysis step of knowledge discovery in databases data mining uses many machine learning methods but with different_goals on the other_hand machine learning also_employs data mining methods as unsupervised learning or as a preprocessing_step to improve learner accuracy_much of the confusion_between these two research_communities which do often have separate_conferences and separate_journals ecml_pkdd being a major_exception comes from the basic_assumptions they_work with in machine learning performance is usually_evaluated with_respect to the ability to reproduce_known knowledge while in knowledge discovery and data mining kdd the key_task is the discovery of previously_unknown knowledge evaluated with_respect to known knowledge an uninformed_unsupervised method will_easily be outperformed by other supervised methods while in a typical_kdd task supervised methods cannot be used_due to the unavailability of training data
+
+ machine learning also has_intimate ties to optimization many learning problems are formulated as minimization of some loss function on a training set of examples loss_functions express the discrepancy_between the predictions of the model being trained and the actual_problem instances for example in classification one_wants to assign a label to instances and models are trained to correctly_predict the preassigned_labels of a set examples the difference_between the two fields_arises from the goal of generalization while optimization algorithms can minimize the loss on a training set machine learning is concerned with minimizing the loss on unseen_samples
+ relation to statistics
+
+ machine learning and statistics are closely_related fields_according to michael_i jordan the ideas of machine learning from methodological_principles to theoretical_tools have had a long_prehistory in statistics he also_suggested the term data science as a placeholder to call the overall_field
+
+ leo_breiman distinguished_two statistical_modelling paradigms data model and algorithmic model wherein_algorithmic model means more or less the machine learning algorithms like_random forest
+
+ some_statisticians have_adopted methods from machine learning leading to a combined_field that they_call statistical learning
+ theory
+
+ a core_objective of a learner is to generalize from its experience generalization in this context is the ability of a learning machine to perform_accurately on new unseen_examplestasks after_having experienced a learning data set the training examples come from some generally_unknown probability_distribution considered_representative of the space of occurrences and the learner has to build a general model about this space that enables it to produce_sufficiently accurate_predictions in new_cases
+
+ the computational analysis of machine learning algorithms and their performance is a branch of theoretical computer_science known as computational learning theory because training sets are finite and the future is uncertain learning theory usually_does not_yield guarantees of the performance of algorithms instead_probabilistic bounds on the performance are quite_common the biasvariance_decomposition is one way to quantify_generalization error
+
+ for the best performance in the context of generalization the complexity of the hypothesis_should match the complexity of the function_underlying the data if the hypothesis is less_complex than the function then the model has_underfit the data if the complexity of the model is increased in response_then the training error_decreases but if the hypothesis is too_complex then the model is subject to overfitting and generalization will be poorer
+
+ in addition to performance bounds computational learning theorists_study the time_complexity and feasibility of learning in computational learning theory a computation is considered_feasible if it can be done in polynomial_time there are two_kinds of time_complexity results positive results_show that a certain_class of functions can be learned in polynomial_time negative results_show that certain classes cannot be learned in polynomial_time
+ approaches
+ decision_tree learning
+
+ decision_tree learning uses a decision_tree as a predictive model which maps_observations about an item to conclusions_about the items_target value
+ association_rule learning
+
+ association_rule learning is a method for discovering_interesting relations_between variables in large_databases
+ artificial_neural networks
+
+ an artificial_neural network_ann learning algorithm usually_called neural_network nn is a learning algorithm that is inspired by the structure and functional_aspects of biological_neural networks_computations are structured in terms of an interconnected_group of artificial_neurons processing_information using a connectionist_approach to computation_modern neural_networks are nonlinear_statistical data modeling_tools they are usually used to model complex relationships_between inputs and outputs to find patterns in data or to capture the statistical structure in an unknown_joint probability_distribution between observed_variables
+ deep learning
+
+ falling_hardware prices and the development of gpus for personal_use in the last_few years_have contributed to the development of the concept of deep learning which_consists of multiple_hidden layers in an artificial_neural network this approach_tries to model the way the human_brain processes_light and sound_into vision and hearing_some successful_applications of deep learning are computer_vision and speech recognition
+ inductive_logic programming
+
+ inductive_logic programming ilp is an approach to rule learning using logic_programming as a uniform_representation for input examples background_knowledge and hypotheses given an encoding of the known background_knowledge and a set of examples represented as a logical_database of facts an ilp_system will_derive a hypothesized_logic program that entails_all positive and no_negative examples inductive programming is a related field that considers_any kind of programming_languages for representing_hypotheses and not_only logic_programming such as functional_programs
+ support_vector machines
+
+ support_vector machines_svms are a set of related supervised learning methods used for classification and regression given a set of training examples each_marked as belonging to one of two categories an svm training algorithm_builds a model that predicts_whether a new example_falls into one_category or the other
+ clustering
+
+ cluster_analysis is the assignment of a set of observations into subsets_called clusters_so that observations_within the same_cluster are similar_according to some_predesignated criterion or criteria_while observations_drawn from different_clusters are dissimilar_different clustering_techniques make different_assumptions on the structure of the data often defined by some similarity_metric and evaluated for example by internal_compactness similarity between_members of the same_cluster and separation_between different_clusters other methods are based_on estimated_density and graph_connectivity clustering is a method of unsupervised learning and a common_technique for statistical data analysis
+ bayesian networks
+
+ a bayesian_network belief_network or directed_acyclic graphical model is a probabilistic_graphical model that represents a set of random_variables and their_conditional independencies_via a directed_acyclic graph_dag for example a bayesian_network could_represent the probabilistic relationships_between diseases and symptoms given symptoms the network can be used to compute the probabilities of the presence of various_diseases efficient algorithms exist that perform_inference and learning
+ reinforcement learning
+
+ reinforcement learning is concerned with how an agent_ought to take_actions in an environment_so as to maximize_some notion of longterm_reward reinforcement learning algorithms_attempt to find a policy that maps_states of the world to the actions the agent_ought to take in those_states reinforcement learning differs from the supervised learning problem in that correct_inputoutput pairs are never_presented nor_suboptimal actions_explicitly corrected
+ representation learning
+
+ several learning algorithms mostly unsupervised learning algorithms_aim at_discovering better_representations of the inputs provided_during training classical_examples include_principal components_analysis and cluster_analysis representation learning algorithms often attempt to preserve the information in their input but_transform it in a way that makes it useful_often as a preprocessing_step before_performing classification or predictions_allowing to reconstruct the inputs_coming from the unknown data generating_distribution while not being_necessarily faithful for configurations that are implausible_under that distribution
+
+ manifold learning algorithms_attempt to do_so under the constraint that the learned_representation is lowdimensional sparse_coding algorithms_attempt to do_so under the constraint that the learned_representation is sparse has many_zeros multilinear_subspace learning algorithms_aim to learn lowdimensional_representations directly from tensor_representations for multidimensional data without_reshaping them_into highdimensional_vectors deep learning algorithms discover_multiple levels of representation or a hierarchy of features with higherlevel_more abstract_features defined in terms of or generating_lowerlevel features it has_been argued that an intelligent machine is one that learns a representation that disentangles the underlying_factors of variation that explain the observed data
+ similarity and metric learning
+
+ in this problem the learning machine is given pairs of examples that are considered similar and pairs of less similar_objects it then_needs to learn a similarity function or a distance_metric function that can predict if new_objects are similar it is sometimes used in recommendation systems
+ sparse_dictionary learning
+
+ in this method a datum is represented as a linear_combination of basis_functions and the coefficients are assumed to be sparse_let x be a ddimensional_datum d be a d by n_matrix where each_column of d_represents a basis_function r is the coefficient to represent_x using d_mathematically sparse_dictionary learning means_solving x_≈ d r_displaystyle xapprox_dr displaystyle_xapprox dr where r is sparse generally_speaking n is assumed to be larger_than d to allow the freedom for a sparse representation
+
+ learning a dictionary along with sparse representations is strongly_nphard and also difficult to solve_approximately a popular_heuristic method for sparse_dictionary learning is ksvd
+
+ sparse_dictionary learning has_been applied in several_contexts in classification the problem is to determine_which classes a previously unseen datum_belongs to suppose a dictionary for each_class has already been built then a new datum is associated with the class such that its best_sparsely represented by the corresponding_dictionary sparse_dictionary learning has also been_applied in image_denoising the key_idea is that a clean_image patch can be sparsely_represented by an image dictionary but the noise_cannot
+ genetic algorithms
+
+ a genetic_algorithm ga is a search_heuristic that mimics the process of natural_selection and uses methods such as mutation and crossover to generate_new genotype in the hope of finding_good solutions to a given problem in machine learning genetic algorithms found some uses in the s and s_vice versa machine learning techniques have been used to improve the performance of genetic and evolutionary algorithms
+ rulebased machine learning
+
+ rulebased machine learning is a general_term for any machine learning method that identifies_learns or evolves_rules’ to store_manipulate or apply_knowledge the defining_characteristic of a rulebased machine learner is the identification and utilization of a set of relational_rules that collectively_represent the knowledge_captured by the system this is in contrast to other machine learners that commonly_identify a singular model that can be universally_applied to any_instance in order to make a prediction rulebased machine learning approaches_include learning classifier_systems association_rule learning and artificial_immune systems
+ learning classifier_systems
+
+ learning classifier_systems lcs are a family of rulebased machine learning algorithms that combine a discovery_component eg_typically a genetic_algorithm with a learning component_performing either_supervised learning reinforcement learning or unsupervised learning they_seek to identify a set of contextdependent_rules that collectively_store and apply_knowledge in a piecewise_manner in order to make_predictions
+ applications
+
+ applications for machine learning include
+
+ adaptive_websites
+ affective_computing
+ bioinformatics
+ brainmachine_interfaces
+ cheminformatics
+ classifying_dna sequences
+ computational_anatomy
+ computer_vision including_object recognition
+ detecting_credit card_fraud
+ game_playing
+ information_retrieval
+ internet_fraud detection
+ marketing
+ machine perception
+ medical_diagnosis
+ economics
+ natural_language processing
+ natural_language understanding
+ optimization and metaheuristic
+ online_advertising
+ recommender_systems
+ robot_locomotion
+ search_engines
+ sentiment_analysis or opinion_mining
+ sequence_mining
+ software_engineering
+ speech and handwriting_recognition
+ financial_market analysis
+ structural_health monitoring
+ syntactic_pattern recognition
+ user_behavior analytics
+ translation
+
+ in the online_movie company_netflix held the first_netflix prize_competition to find a program to better_predict user_preferences and improve the accuracy on its_existing cinematch_movie recommendation algorithm by at_least a joint_team made_up of researchers from att_labsresearch in collaboration with the teams_big chaos and pragmatic_theory built an ensemble model to win the grand_prize in for million_shortly after the prize was_awarded netflix_realized that viewers_ratings were not the best_indicators of their_viewing patterns_everything is a recommendation and they_changed their recommendation_engine accordingly
+
+ in the wall_street journal_wrote about_money management_firm rebellion_researchs use of machine learning to predict_economic movements the article_describes rebellion_researchs prediction of the financial_crisis and economic_recovery
+
+ in cofounder of sun_microsystems vinod_khosla predicted that of medical_doctors jobs_would be lost in the next_two decades to automated machine learning medical_diagnostic software
+
+ in it has_been reported that a machine learning algorithm has_been applied in art_history to study_fine art_paintings and that it may_have revealed_previously unrecognized_influences between_artists
+ model assessments
+
+ classification machine learning models can be validated by accuracy_estimation techniques_like the holdout method which splits the data in a training and test_set conventionally training set and test_set designation and evaluates the performance of the training model on the test_set in comparison the nfoldcrossvalidation_method randomly_splits the data in k_subsets where the k_instances of the data are used to train the model while the kth_instance is used to test the predictive_ability of the training model in addition to the holdout and crossvalidation_methods bootstrap_which samples_n instances with replacement from the dataset can be used to assess model accuracy in addition to accuracy_sensitivity and specificity_true positive_rate tpr and true_negative rate_tnr respectively can provide_modes of model assessment_similarly false_positive rate_fpr as well as the false_negative rate_fnr can be computed_receiver operating_characteristic roc_along with the accompanying_area under the roc_curve auc_offer additional_tools for classification model assessment_higher auc is associated with a better_performing model
+ ethics
+
+ machine learning poses a host of ethical_questions systems which are trained on datasets_collected with biases_may exhibit_these biases_upon use_thus digitizing_cultural prejudices_responsible collection of data thus is a critical_part of machine learning
+
+ because_language contains_biases machines trained on language_corpora will_necessarily also learn bias
+
+ see machine ethics for additional_information
+ machine learning
+ from wikipedia the free_encyclopedia
+
+ machine learning is the subfield of computer_science that gives_computers the ability to learn without_being explicitly_programmed evolved from the study of pattern_recognition and computational learning theory in artificial_intelligence machine learning explores the study and construction of algorithms that can learn from and make_predictions on data such algorithms overcome_following strictly_static program_instructions by making data driven_predictions or decisions_through building a model from sample_inputs machine learning is employed in a range of computing tasks where_designing and programming_explicit algorithms with good performance is difficult or infeasible_example applications include spam_filtering detection of network_intruders or malicious_insiders working_towards a data breach_optical character_recognition ocr_search engines and computer_vision
+
+ machine learning is closely_related to and often_overlaps with computational statistics which also focuses in predictionmaking_through the use of computers it has_strong ties to mathematical_optimization which_delivers methods theory and application_domains to the field machine learning is sometimes_conflated with data mining where the latter_subfield focuses more on exploratory data analysis and is known as unsupervised_learningvii machine learning can also be unsupervised and be used to learn and establish_baseline behavioral_profiles for various_entities and then used to find_meaningful anomalies
+
+ within the field of data analytics machine learning is a method used to devise_complex models and algorithms that lend_themselves to prediction in commercial_use this is known as predictive_analytics these_analytical models allow_researchers data scientists_engineers and analysts to produce_reliable repeatable_decisions and results and uncover_hidden insights_through learning from historical_relationships and trends in the data
+
+ overview
+
+ tom_m mitchell_provided a widely_quoted more_formal definition a computer program is said to learn from experience_e with_respect to some class of tasks_t and performance_measure p_if its performance at tasks in t as measured by p_improves with experience_e this definition is notable for its defining machine learning in fundamentally_operational rather_than cognitive_terms thus_following alan_turings proposal in his_paper computing_machinery and intelligence that the question_can machines_think be replaced with the question_can machines do_what we as thinking_entities can do in the proposal_he explores the various_characteristics that could be possessed by a thinking machine and the various_implications in constructing_one
+ types of problems and tasks
+
+ machine learning tasks are typically_classified into_three broad_categories depending on the nature of the learning signal or feedback_available to a learning system these are
+
+ supervised learning the computer is presented with example inputs and their desired_outputs given by a teacher and the goal is to learn a general rule that maps inputs to outputs
+ unsupervised learning no_labels are given to the learning algorithm_leaving it on its_own to find structure in its input unsupervised learning can be a goal in itself_discovering hidden_patterns in data or a means_towards an end_feature learning
+ reinforcement learning a computer program_interacts with a dynamic_environment in which it must_perform a certain goal such as driving a vehicle or playing a game_against an opponent the program is provided_feedback in terms of rewards and punishments as it navigates_its problem space
+
+ between supervised and unsupervised learning is semisupervised learning where the teacher_gives an incomplete training signal a training set with some often many of the target_outputs missing_transduction is a special_case of this_principle where the entire set of problem instances is known at learning time_except that part of the targets are missing
+
+ among_other categories of machine learning problems learning to learn learns its_own inductive_bias based_on previous_experience developmental learning elaborated for robot learning generates_its own_sequences also called_curriculum of learning situations to cumulatively_acquire repertoires of novel_skills through_autonomous selfexploration and social_interaction with human_teachers and using_guidance mechanisms_such as active learning maturation_motor synergies and imitation
+
+ another_categorization of machine learning tasks_arises when_one considers the desired_output of a machinelearned_system
+
+ in classification inputs are divided_into two or more classes and the learner_must produce a model that assigns_unseen inputs to one or more_multilabel classification of these classes this is typically_tackled in a supervised way spam_filtering is an example of classification where the inputs are email or other_messages and the classes are spam and not spam
+ in regression also a supervised problem the outputs are continuous_rather than_discrete
+ in clustering a set of inputs is to be divided_into groups_unlike in classification the groups are not known_beforehand making this typically an unsupervised task
+ density_estimation finds the distribution of inputs in some space
+ dimensionality_reduction simplifies_inputs by mapping_them into a lowerdimensional_space topic_modeling is a related problem where a program is given a list of human language_documents and is tasked to find out which documents_cover similar_topics
+
+ history and relationships to other fields
+
+ as a scientific_endeavour machine learning grew_out of the quest for artificial_intelligence already in the early_days of ai as an academic_discipline some researchers were_interested in having_machines learn from data they_attempted to approach the problem with various_symbolic methods as well as what_were then_termed neural_networks these were_mostly perceptrons and other models that were_later found to be reinventions of the generalized_linear models of statistics probabilistic_reasoning was also employed_especially in automated_medical diagnosis
+
+ however an increasing_emphasis on the logical_knowledgebased approach_caused a rift_between ai and machine learning probabilistic systems were_plagued by theoretical and practical_problems of data acquisition and representation by expert_systems had_come to dominate_ai and statistics was out of favor_work on symbolicknowledgebased learning did_continue within ai leading to inductive_logic programming but the more statistical_line of research was_now outside the field of ai_proper in pattern_recognition and information_retrieval neural_networks research_had been_abandoned by ai and computer_science around the same time this line_too was_continued outside the aics_field as connectionism by researchers from other_disciplines including_hopfield rumelhart and hinton_their main_success came in the mids with the reinvention of backpropagation
+
+ machine learning reorganized as a separate field_started to flourish in the s the field changed its goal from achieving_artificial intelligence to tackling_solvable problems of a practical_nature it shifted_focus away from the symbolic_approaches it had_inherited from ai and toward_methods and models_borrowed from statistics and probability theory it also_benefited from the increasing_availability of digitized_information and the possibility to distribute that via the internet
+
+ machine learning and data mining often_employ the same methods and overlap_significantly but while machine learning focuses on prediction_based on known properties_learned from the training data data mining focuses on the discovery of previously_unknown properties in the data this is the analysis step of knowledge discovery in databases data mining uses many machine learning methods but with different_goals on the other_hand machine learning also_employs data mining methods as unsupervised learning or as a preprocessing_step to improve learner accuracy_much of the confusion_between these two research_communities which do often have separate_conferences and separate_journals ecml_pkdd being a major_exception comes from the basic_assumptions they_work with in machine learning performance is usually_evaluated with_respect to the ability to reproduce_known knowledge while in knowledge discovery and data mining kdd the key_task is the discovery of previously_unknown knowledge evaluated with_respect to known knowledge an uninformed_unsupervised method will_easily be outperformed by other supervised methods while in a typical_kdd task supervised methods cannot be used_due to the unavailability of training data
+
+ machine learning also has_intimate ties to optimization many learning problems are formulated as minimization of some loss function on a training set of examples loss_functions express the discrepancy_between the predictions of the model being trained and the actual_problem instances for example in classification one_wants to assign a label to instances and models are trained to correctly_predict the preassigned_labels of a set examples the difference_between the two fields_arises from the goal of generalization while optimization algorithms can minimize the loss on a training set machine learning is concerned with minimizing the loss on unseen_samples
+ relation to statistics
+
+ machine learning and statistics are closely_related fields_according to michael_i jordan the ideas of machine learning from methodological_principles to theoretical_tools have had a long_prehistory in statistics he also_suggested the term data science as a placeholder to call the overall_field
+
+ leo_breiman distinguished_two statistical_modelling paradigms data model and algorithmic model wherein_algorithmic model means more or less the machine learning algorithms like_random forest
+
+ some_statisticians have_adopted methods from machine learning leading to a combined_field that they_call statistical learning
+ theory
+
+ a core_objective of a learner is to generalize from its experience generalization in this context is the ability of a learning machine to perform_accurately on new unseen_examplestasks after_having experienced a learning data set the training examples come from some generally_unknown probability_distribution considered_representative of the space of occurrences and the learner has to build a general model about this space that enables it to produce_sufficiently accurate_predictions in new_cases
+
+ the computational analysis of machine learning algorithms and their performance is a branch of theoretical computer_science known as computational learning theory because training sets are finite and the future is uncertain learning theory usually_does not_yield guarantees of the performance of algorithms instead_probabilistic bounds on the performance are quite_common the biasvariance_decomposition is one way to quantify_generalization error
+
+ for the best performance in the context of generalization the complexity of the hypothesis_should match the complexity of the function_underlying the data if the hypothesis is less_complex than the function then the model has_underfit the data if the complexity of the model is increased in response_then the training error_decreases but if the hypothesis is too_complex then the model is subject to overfitting and generalization will be poorer
+
+ in addition to performance bounds computational learning theorists_study the time_complexity and feasibility of learning in computational learning theory a computation is considered_feasible if it can be done in polynomial_time there are two_kinds of time_complexity results positive results_show that a certain_class of functions can be learned in polynomial_time negative results_show that certain classes cannot be learned in polynomial_time
+ approaches
+ decision_tree learning
+
+ decision_tree learning uses a decision_tree as a predictive model which maps_observations about an item to conclusions_about the items_target value
+ association_rule learning
+
+ association_rule learning is a method for discovering_interesting relations_between variables in large_databases
+ artificial_neural networks
+
+ an artificial_neural network_ann learning algorithm usually_called neural_network nn is a learning algorithm that is inspired by the structure and functional_aspects of biological_neural networks_computations are structured in terms of an interconnected_group of artificial_neurons processing_information using a connectionist_approach to computation_modern neural_networks are nonlinear_statistical data modeling_tools they are usually used to model complex relationships_between inputs and outputs to find patterns in data or to capture the statistical structure in an unknown_joint probability_distribution between observed_variables
+ deep learning
+
+ falling_hardware prices and the development of gpus for personal_use in the last_few years_have contributed to the development of the concept of deep learning which_consists of multiple_hidden layers in an artificial_neural network this approach_tries to model the way the human_brain processes_light and sound_into vision and hearing_some successful_applications of deep learning are computer_vision and speech recognition
+ inductive_logic programming
+
+ inductive_logic programming ilp is an approach to rule learning using logic_programming as a uniform_representation for input examples background_knowledge and hypotheses given an encoding of the known background_knowledge and a set of examples represented as a logical_database of facts an ilp_system will_derive a hypothesized_logic program that entails_all positive and no_negative examples inductive programming is a related field that considers_any kind of programming_languages for representing_hypotheses and not_only logic_programming such as functional_programs
+ support_vector machines
+
+ support_vector machines_svms are a set of related supervised learning methods used for classification and regression given a set of training examples each_marked as belonging to one of two categories an svm training algorithm_builds a model that predicts_whether a new example_falls into one_category or the other
+ clustering
+
+ cluster_analysis is the assignment of a set of observations into subsets_called clusters_so that observations_within the same_cluster are similar_according to some_predesignated criterion or criteria_while observations_drawn from different_clusters are dissimilar_different clustering_techniques make different_assumptions on the structure of the data often defined by some similarity_metric and evaluated for example by internal_compactness similarity between_members of the same_cluster and separation_between different_clusters other methods are based_on estimated_density and graph_connectivity clustering is a method of unsupervised learning and a common_technique for statistical data analysis
+ bayesian networks
+
+ a bayesian_network belief_network or directed_acyclic graphical model is a probabilistic_graphical model that represents a set of random_variables and their_conditional independencies_via a directed_acyclic graph_dag for example a bayesian_network could_represent the probabilistic relationships_between diseases and symptoms given symptoms the network can be used to compute the probabilities of the presence of various_diseases efficient algorithms exist that perform_inference and learning
+ reinforcement learning
+
+ reinforcement learning is concerned with how an agent_ought to take_actions in an environment_so as to maximize_some notion of longterm_reward reinforcement learning algorithms_attempt to find a policy that maps_states of the world to the actions the agent_ought to take in those_states reinforcement learning differs from the supervised learning problem in that correct_inputoutput pairs are never_presented nor_suboptimal actions_explicitly corrected
+ representation learning
+
+ several learning algorithms mostly unsupervised learning algorithms_aim at_discovering better_representations of the inputs provided_during training classical_examples include_principal components_analysis and cluster_analysis representation learning algorithms often attempt to preserve the information in their input but_transform it in a way that makes it useful_often as a preprocessing_step before_performing classification or predictions_allowing to reconstruct the inputs_coming from the unknown data generating_distribution while not being_necessarily faithful for configurations that are implausible_under that distribution
+
+ manifold learning algorithms_attempt to do_so under the constraint that the learned_representation is lowdimensional sparse_coding algorithms_attempt to do_so under the constraint that the learned_representation is sparse has many_zeros multilinear_subspace learning algorithms_aim to learn lowdimensional_representations directly from tensor_representations for multidimensional data without_reshaping them_into highdimensional_vectors deep learning algorithms discover_multiple levels of representation or a hierarchy of features with higherlevel_more abstract_features defined in terms of or generating_lowerlevel features it has_been argued that an intelligent machine is one that learns a representation that disentangles the underlying_factors of variation that explain the observed data
+ similarity and metric learning
+
+ in this problem the learning machine is given pairs of examples that are considered similar and pairs of less similar_objects it then_needs to learn a similarity function or a distance_metric function that can predict if new_objects are similar it is sometimes used in recommendation systems
+ sparse_dictionary learning
+
+ in this method a datum is represented as a linear_combination of basis_functions and the coefficients are assumed to be sparse_let x be a ddimensional_datum d be a d by n_matrix where each_column of d_represents a basis_function r is the coefficient to represent_x using d_mathematically sparse_dictionary learning means_solving x_≈ d r_displaystyle xapprox_dr displaystyle_xapprox dr where r is sparse generally_speaking n is assumed to be larger_than d to allow the freedom for a sparse representation
+
+ learning a dictionary along with sparse representations is strongly_nphard and also difficult to solve_approximately a popular_heuristic method for sparse_dictionary learning is ksvd
+
+ sparse_dictionary learning has_been applied in several_contexts in classification the problem is to determine_which classes a previously unseen datum_belongs to suppose a dictionary for each_class has already been built then a new datum is associated with the class such that its best_sparsely represented by the corresponding_dictionary sparse_dictionary learning has also been_applied in image_denoising the key_idea is that a clean_image patch can be sparsely_represented by an image dictionary but the noise_cannot
+ genetic algorithms
+
+ a genetic_algorithm ga is a search_heuristic that mimics the process of natural_selection and uses methods such as mutation and crossover to generate_new genotype in the hope of finding_good solutions to a given problem in machine learning genetic algorithms found some uses in the s and s_vice versa machine learning techniques have been used to improve the performance of genetic and evolutionary algorithms
+ rulebased machine learning
+
+ rulebased machine learning is a general_term for any machine learning method that identifies_learns or evolves_rules’ to store_manipulate or apply_knowledge the defining_characteristic of a rulebased machine learner is the identification and utilization of a set of relational_rules that collectively_represent the knowledge_captured by the system this is in contrast to other machine learners that commonly_identify a singular model that can be universally_applied to any_instance in order to make a prediction rulebased machine learning approaches_include learning classifier_systems association_rule learning and artificial_immune systems
+ learning classifier_systems
+
+ learning classifier_systems lcs are a family of rulebased machine learning algorithms that combine a discovery_component eg_typically a genetic_algorithm with a learning component_performing either_supervised learning reinforcement learning or unsupervised learning they_seek to identify a set of contextdependent_rules that collectively_store and apply_knowledge in a piecewise_manner in order to make_predictions
+ applications
+
+ applications for machine learning include
+
+ adaptive_websites
+ affective_computing
+ bioinformatics
+ brainmachine_interfaces
+ cheminformatics
+ classifying_dna sequences
+ computational_anatomy
+ computer_vision including_object recognition
+ detecting_credit card_fraud
+ game_playing
+ information_retrieval
+ internet_fraud detection
+ marketing
+ machine perception
+ medical_diagnosis
+ economics
+ natural_language processing
+ natural_language understanding
+ optimization and metaheuristic
+ online_advertising
+ recommender_systems
+ robot_locomotion
+ search_engines
+ sentiment_analysis or opinion_mining
+ sequence_mining
+ software_engineering
+ speech and handwriting_recognition
+ financial_market analysis
+ structural_health monitoring
+ syntactic_pattern recognition
+ user_behavior analytics
+ translation
+
+ in the online_movie company_netflix held the first_netflix prize_competition to find a program to better_predict user_preferences and improve the accuracy on its_existing cinematch_movie recommendation algorithm by at_least a joint_team made_up of researchers from att_labsresearch in collaboration with the teams_big chaos and pragmatic_theory built an ensemble model to win the grand_prize in for million_shortly after the prize was_awarded netflix_realized that viewers_ratings were not the best_indicators of their_viewing patterns_everything is a recommendation and they_changed their recommendation_engine accordingly
+
+ in the wall_street journal_wrote about_money management_firm rebellion_researchs use of machine learning to predict_economic movements the article_describes rebellion_researchs prediction of the financial_crisis and economic_recovery
+
+ in cofounder of sun_microsystems vinod_khosla predicted that of medical_doctors jobs_would be lost in the next_two decades to automated machine learning medical_diagnostic software
+
+ in it has_been reported that a machine learning algorithm has_been applied in art_history to study_fine art_paintings and that it may_have revealed_previously unrecognized_influences between_artists
+ model assessments
+
+ classification machine learning models can be validated by accuracy_estimation techniques_like the holdout method which splits the data in a training and test_set conventionally training set and test_set designation and evaluates the performance of the training model on the test_set in comparison the nfoldcrossvalidation_method randomly_splits the data in k_subsets where the k_instances of the data are used to train the model while the kth_instance is used to test the predictive_ability of the training model in addition to the holdout and crossvalidation_methods bootstrap_which samples_n instances with replacement from the dataset can be used to assess model accuracy in addition to accuracy_sensitivity and specificity_true positive_rate tpr and true_negative rate_tnr respectively can provide_modes of model assessment_similarly false_positive rate_fpr as well as the false_negative rate_fnr can be computed_receiver operating_characteristic roc_along with the accompanying_area under the roc_curve auc_offer additional_tools for classification model assessment_higher auc is associated with a better_performing model
+ ethics
+
+ machine learning poses a host of ethical_questions systems which are trained on datasets_collected with biases_may exhibit_these biases_upon use_thus digitizing_cultural prejudices_responsible collection of data thus is a critical_part of machine learning
+
+ because_language contains_biases machines trained on language_corpora will_necessarily also learn bias
+
+ see machine ethics for additional_information
+ machine learning
+ from wikipedia the free_encyclopedia
+
+ machine learning is the subfield of computer_science that gives_computers the ability to learn without_being explicitly_programmed evolved from the study of pattern_recognition and computational learning theory in artificial_intelligence machine learning explores the study and construction of algorithms that can learn from and make_predictions on data such algorithms overcome_following strictly_static program_instructions by making data driven_predictions or decisions_through building a model from sample_inputs machine learning is employed in a range of computing tasks where_designing and programming_explicit algorithms with good performance is difficult or infeasible_example applications include spam_filtering detection of network_intruders or malicious_insiders working_towards a data breach_optical character_recognition ocr_search engines and computer_vision
+
+ machine learning is closely_related to and often_overlaps with computational statistics which also focuses in predictionmaking_through the use of computers it has_strong ties to mathematical_optimization which_delivers methods theory and application_domains to the field machine learning is sometimes_conflated with data mining where the latter_subfield focuses more on exploratory data analysis and is known as unsupervised_learningvii machine learning can also be unsupervised and be used to learn and establish_baseline behavioral_profiles for various_entities and then used to find_meaningful anomalies
+
+ within the field of data analytics machine learning is a method used to devise_complex models and algorithms that lend_themselves to prediction in commercial_use this is known as predictive_analytics these_analytical models allow_researchers data scientists_engineers and analysts to produce_reliable repeatable_decisions and results and uncover_hidden insights_through learning from historical_relationships and trends in the data
+
+ overview
+
+ tom_m mitchell_provided a widely_quoted more_formal definition a computer program is said to learn from experience_e with_respect to some class of tasks_t and performance_measure p_if its performance at tasks in t as measured by p_improves with experience_e this definition is notable for its defining machine learning in fundamentally_operational rather_than cognitive_terms thus_following alan_turings proposal in his_paper computing_machinery and intelligence that the question_can machines_think be replaced with the question_can machines do_what we as thinking_entities can do in the proposal_he explores the various_characteristics that could be possessed by a thinking machine and the various_implications in constructing_one
+ types of problems and tasks
+
+ machine learning tasks are typically_classified into_three broad_categories depending on the nature of the learning signal or feedback_available to a learning system these are
+
+ supervised learning the computer is presented with example inputs and their desired_outputs given by a teacher and the goal is to learn a general rule that maps inputs to outputs
+ unsupervised learning no_labels are given to the learning algorithm_leaving it on its_own to find structure in its input unsupervised learning can be a goal in itself_discovering hidden_patterns in data or a means_towards an end_feature learning
+ reinforcement learning a computer program_interacts with a dynamic_environment in which it must_perform a certain goal such as driving a vehicle or playing a game_against an opponent the program is provided_feedback in terms of rewards and punishments as it navigates_its problem space
+
+ between supervised and unsupervised learning is semisupervised learning where the teacher_gives an incomplete training signal a training set with some often many of the target_outputs missing_transduction is a special_case of this_principle where the entire set of problem instances is known at learning time_except that part of the targets are missing
+
+ among_other categories of machine learning problems learning to learn learns its_own inductive_bias based_on previous_experience developmental learning elaborated for robot learning generates_its own_sequences also called_curriculum of learning situations to cumulatively_acquire repertoires of novel_skills through_autonomous selfexploration and social_interaction with human_teachers and using_guidance mechanisms_such as active learning maturation_motor synergies and imitation
+
+ another_categorization of machine learning tasks_arises when_one considers the desired_output of a machinelearned_system
+
+ in classification inputs are divided_into two or more classes and the learner_must produce a model that assigns_unseen inputs to one or more_multilabel classification of these classes this is typically_tackled in a supervised way spam_filtering is an example of classification where the inputs are email or other_messages and the classes are spam and not spam
+ in regression also a supervised problem the outputs are continuous_rather than_discrete
+ in clustering a set of inputs is to be divided_into groups_unlike in classification the groups are not known_beforehand making this typically an unsupervised task
+ density_estimation finds the distribution of inputs in some space
+ dimensionality_reduction simplifies_inputs by mapping_them into a lowerdimensional_space topic_modeling is a related problem where a program is given a list of human language_documents and is tasked to find out which documents_cover similar_topics
+
+ history and relationships to other fields
+
+ as a scientific_endeavour machine learning grew_out of the quest for artificial_intelligence already in the early_days of ai as an academic_discipline some researchers were_interested in having_machines learn from data they_attempted to approach the problem with various_symbolic methods as well as what_were then_termed neural_networks these were_mostly perceptrons and other models that were_later found to be reinventions of the generalized_linear models of statistics probabilistic_reasoning was also employed_especially in automated_medical diagnosis
+
+ however an increasing_emphasis on the logical_knowledgebased approach_caused a rift_between ai and machine learning probabilistic systems were_plagued by theoretical and practical_problems of data acquisition and representation by expert_systems had_come to dominate_ai and statistics was out of favor_work on symbolicknowledgebased learning did_continue within ai leading to inductive_logic programming but the more statistical_line of research was_now outside the field of ai_proper in pattern_recognition and information_retrieval neural_networks research_had been_abandoned by ai and computer_science around the same time this line_too was_continued outside the aics_field as connectionism by researchers from other_disciplines including_hopfield rumelhart and hinton_their main_success came in the mids with the reinvention of backpropagation
+
+ machine learning reorganized as a separate field_started to flourish in the s the field changed its goal from achieving_artificial intelligence to tackling_solvable problems of a practical_nature it shifted_focus away from the symbolic_approaches it had_inherited from ai and toward_methods and models_borrowed from statistics and probability theory it also_benefited from the increasing_availability of digitized_information and the possibility to distribute that via the internet
+
+ machine learning and data mining often_employ the same methods and overlap_significantly but while machine learning focuses on prediction_based on known properties_learned from the training data data mining focuses on the discovery of previously_unknown properties in the data this is the analysis step of knowledge discovery in databases data mining uses many machine learning methods but with different_goals on the other_hand machine learning also_employs data mining methods as unsupervised learning or as a preprocessing_step to improve learner accuracy_much of the confusion_between these two research_communities which do often have separate_conferences and separate_journals ecml_pkdd being a major_exception comes from the basic_assumptions they_work with in machine learning performance is usually_evaluated with_respect to the ability to reproduce_known knowledge while in knowledge discovery and data mining kdd the key_task is the discovery of previously_unknown knowledge evaluated with_respect to known knowledge an uninformed_unsupervised method will_easily be outperformed by other supervised methods while in a typical_kdd task supervised methods cannot be used_due to the unavailability of training data
+
+ machine learning also has_intimate ties to optimization many learning problems are formulated as minimization of some loss function on a training set of examples loss_functions express the discrepancy_between the predictions of the model being trained and the actual_problem instances for example in classification one_wants to assign a label to instances and models are trained to correctly_predict the preassigned_labels of a set examples the difference_between the two fields_arises from the goal of generalization while optimization algorithms can minimize the loss on a training set machine learning is concerned with minimizing the loss on unseen_samples
+ relation to statistics
+
+ machine learning and statistics are closely_related fields_according to michael_i jordan the ideas of machine learning from methodological_principles to theoretical_tools have had a long_prehistory in statistics he also_suggested the term data science as a placeholder to call the overall_field
+
+ leo_breiman distinguished_two statistical_modelling paradigms data model and algorithmic model wherein_algorithmic model means more or less the machine learning algorithms like_random forest
+
+ some_statisticians have_adopted methods from machine learning leading to a combined_field that they_call statistical learning
+ theory
+
+ a core_objective of a learner is to generalize from its experience generalization in this context is the ability of a learning machine to perform_accurately on new unseen_examplestasks after_having experienced a learning data set the training examples come from some generally_unknown probability_distribution considered_representative of the space of occurrences and the learner has to build a general model about this space that enables it to produce_sufficiently accurate_predictions in new_cases
+
+ the computational analysis of machine learning algorithms and their performance is a branch of theoretical computer_science known as computational learning theory because training sets are finite and the future is uncertain learning theory usually_does not_yield guarantees of the performance of algorithms instead_probabilistic bounds on the performance are quite_common the biasvariance_decomposition is one way to quantify_generalization error
+
+ for the best performance in the context of generalization the complexity of the hypothesis_should match the complexity of the function_underlying the data if the hypothesis is less_complex than the function then the model has_underfit the data if the complexity of the model is increased in response_then the training error_decreases but if the hypothesis is too_complex then the model is subject to overfitting and generalization will be poorer
+
+ in addition to performance bounds computational learning theorists_study the time_complexity and feasibility of learning in computational learning theory a computation is considered_feasible if it can be done in polynomial_time there are two_kinds of time_complexity results positive results_show that a certain_class of functions can be learned in polynomial_time negative results_show that certain classes cannot be learned in polynomial_time
+ approaches
+ decision_tree learning
+
+ decision_tree learning uses a decision_tree as a predictive model which maps_observations about an item to conclusions_about the items_target value
+ association_rule learning
+
+ association_rule learning is a method for discovering_interesting relations_between variables in large_databases
+ artificial_neural networks
+
+ an artificial_neural network_ann learning algorithm usually_called neural_network nn is a learning algorithm that is inspired by the structure and functional_aspects of biological_neural networks_computations are structured in terms of an interconnected_group of artificial_neurons processing_information using a connectionist_approach to computation_modern neural_networks are nonlinear_statistical data modeling_tools they are usually used to model complex relationships_between inputs and outputs to find patterns in data or to capture the statistical structure in an unknown_joint probability_distribution between observed_variables
+ deep learning
+
+ falling_hardware prices and the development of gpus for personal_use in the last_few years_have contributed to the development of the concept of deep learning which_consists of multiple_hidden layers in an artificial_neural network this approach_tries to model the way the human_brain processes_light and sound_into vision and hearing_some successful_applications of deep learning are computer_vision and speech recognition
+ inductive_logic programming
+
+ inductive_logic programming ilp is an approach to rule learning using logic_programming as a uniform_representation for input examples background_knowledge and hypotheses given an encoding of the known background_knowledge and a set of examples represented as a logical_database of facts an ilp_system will_derive a hypothesized_logic program that entails_all positive and no_negative examples inductive programming is a related field that considers_any kind of programming_languages for representing_hypotheses and not_only logic_programming such as functional_programs
+ support_vector machines
+
+ support_vector machines_svms are a set of related supervised learning methods used for classification and regression given a set of training examples each_marked as belonging to one of two categories an svm training algorithm_builds a model that predicts_whether a new example_falls into one_category or the other
+ clustering
+
+ cluster_analysis is the assignment of a set of observations into subsets_called clusters_so that observations_within the same_cluster are similar_according to some_predesignated criterion or criteria_while observations_drawn from different_clusters are dissimilar_different clustering_techniques make different_assumptions on the structure of the data often defined by some similarity_metric and evaluated for example by internal_compactness similarity between_members of the same_cluster and separation_between different_clusters other methods are based_on estimated_density and graph_connectivity clustering is a method of unsupervised learning and a common_technique for statistical data analysis
+ bayesian networks
+
+ a bayesian_network belief_network or directed_acyclic graphical model is a probabilistic_graphical model that represents a set of random_variables and their_conditional independencies_via a directed_acyclic graph_dag for example a bayesian_network could_represent the probabilistic relationships_between diseases and symptoms given symptoms the network can be used to compute the probabilities of the presence of various_diseases efficient algorithms exist that perform_inference and learning
+ reinforcement learning
+
+ reinforcement learning is concerned with how an agent_ought to take_actions in an environment_so as to maximize_some notion of longterm_reward reinforcement learning algorithms_attempt to find a policy that maps_states of the world to the actions the agent_ought to take in those_states reinforcement learning differs from the supervised learning problem in that correct_inputoutput pairs are never_presented nor_suboptimal actions_explicitly corrected
+ representation learning
+
+ several learning algorithms mostly unsupervised learning algorithms_aim at_discovering better_representations of the inputs provided_during training classical_examples include_principal components_analysis and cluster_analysis representation learning algorithms often attempt to preserve the information in their input but_transform it in a way that makes it useful_often as a preprocessing_step before_performing classification or predictions_allowing to reconstruct the inputs_coming from the unknown data generating_distribution while not being_necessarily faithful for configurations that are implausible_under that distribution
+
+ manifold learning algorithms_attempt to do_so under the constraint that the learned_representation is lowdimensional sparse_coding algorithms_attempt to do_so under the constraint that the learned_representation is sparse has many_zeros multilinear_subspace learning algorithms_aim to learn lowdimensional_representations directly from tensor_representations for multidimensional data without_reshaping them_into highdimensional_vectors deep learning algorithms discover_multiple levels of representation or a hierarchy of features with higherlevel_more abstract_features defined in terms of or generating_lowerlevel features it has_been argued that an intelligent machine is one that learns a representation that disentangles the underlying_factors of variation that explain the observed data
+ similarity and metric learning
+
+ in this problem the learning machine is given pairs of examples that are considered similar and pairs of less similar_objects it then_needs to learn a similarity function or a distance_metric function that can predict if new_objects are similar it is sometimes used in recommendation systems
+ sparse_dictionary learning
+
+ in this method a datum is represented as a linear_combination of basis_functions and the coefficients are assumed to be sparse_let x be a ddimensional_datum d be a d by n_matrix where each_column of d_represents a basis_function r is the coefficient to represent_x using d_mathematically sparse_dictionary learning means_solving x_≈ d r_displaystyle xapprox_dr displaystyle_xapprox dr where r is sparse generally_speaking n is assumed to be larger_than d to allow the freedom for a sparse representation
+
+ learning a dictionary along with sparse representations is strongly_nphard and also difficult to solve_approximately a popular_heuristic method for sparse_dictionary learning is ksvd
+
+ sparse_dictionary learning has_been applied in several_contexts in classification the problem is to determine_which classes a previously unseen datum_belongs to suppose a dictionary for each_class has already been built then a new datum is associated with the class such that its best_sparsely represented by the corresponding_dictionary sparse_dictionary learning has also been_applied in image_denoising the key_idea is that a clean_image patch can be sparsely_represented by an image dictionary but the noise_cannot
+ genetic algorithms
+
+ a genetic_algorithm ga is a search_heuristic that mimics the process of natural_selection and uses methods such as mutation and crossover to generate_new genotype in the hope of finding_good solutions to a given problem in machine learning genetic algorithms found some uses in the s and s_vice versa machine learning techniques have been used to improve the performance of genetic and evolutionary algorithms
+ rulebased machine learning
+
+ rulebased machine learning is a general_term for any machine learning method that identifies_learns or evolves_rules’ to store_manipulate or apply_knowledge the defining_characteristic of a rulebased machine learner is the identification and utilization of a set of relational_rules that collectively_represent the knowledge_captured by the system this is in contrast to other machine learners that commonly_identify a singular model that can be universally_applied to any_instance in order to make a prediction rulebased machine learning approaches_include learning classifier_systems association_rule learning and artificial_immune systems
+ learning classifier_systems
+
+ learning classifier_systems lcs are a family of rulebased machine learning algorithms that combine a discovery_component eg_typically a genetic_algorithm with a learning component_performing either_supervised learning reinforcement learning or unsupervised learning they_seek to identify a set of contextdependent_rules that collectively_store and apply_knowledge in a piecewise_manner in order to make_predictions
+ applications
+
+ applications for machine learning include
+
+ adaptive_websites
+ affective_computing
+ bioinformatics
+ brainmachine_interfaces
+ cheminformatics
+ classifying_dna sequences
+ computational_anatomy
+ computer_vision including_object recognition
+ detecting_credit card_fraud
+ game_playing
+ information_retrieval
+ internet_fraud detection
+ marketing
+ machine perception
+ medical_diagnosis
+ economics
+ natural_language processing
+ natural_language understanding
+ optimization and metaheuristic
+ online_advertising
+ recommender_systems
+ robot_locomotion
+ search_engines
+ sentiment_analysis or opinion_mining
+ sequence_mining
+ software_engineering
+ speech and handwriting_recognition
+ financial_market analysis
+ structural_health monitoring
+ syntactic_pattern recognition
+ user_behavior analytics
+ translation
+
+ in the online_movie company_netflix held the first_netflix prize_competition to find a program to better_predict user_preferences and improve the accuracy on its_existing cinematch_movie recommendation algorithm by at_least a joint_team made_up of researchers from att_labsresearch in collaboration with the teams_big chaos and pragmatic_theory built an ensemble model to win the grand_prize in for million_shortly after the prize was_awarded netflix_realized that viewers_ratings were not the best_indicators of their_viewing patterns_everything is a recommendation and they_changed their recommendation_engine accordingly
+
+ in the wall_street journal_wrote about_money management_firm rebellion_researchs use of machine learning to predict_economic movements the article_describes rebellion_researchs prediction of the financial_crisis and economic_recovery
+
+ in cofounder of sun_microsystems vinod_khosla predicted that of medical_doctors jobs_would be lost in the next_two decades to automated machine learning medical_diagnostic software
+
+ in it has_been reported that a machine learning algorithm has_been applied in art_history to study_fine art_paintings and that it may_have revealed_previously unrecognized_influences between_artists
+ model assessments
+
+ classification machine learning models can be validated by accuracy_estimation techniques_like the holdout method which splits the data in a training and test_set conventionally training set and test_set designation and evaluates the performance of the training model on the test_set in comparison the nfoldcrossvalidation_method randomly_splits the data in k_subsets where the k_instances of the data are used to train the model while the kth_instance is used to test the predictive_ability of the training model in addition to the holdout and crossvalidation_methods bootstrap_which samples_n instances with replacement from the dataset can be used to assess model accuracy in addition to accuracy_sensitivity and specificity_true positive_rate tpr and true_negative rate_tnr respectively can provide_modes of model assessment_similarly false_positive rate_fpr as well as the false_negative rate_fnr can be computed_receiver operating_characteristic roc_along with the accompanying_area under the roc_curve auc_offer additional_tools for classification model assessment_higher auc is associated with a better_performing model
+ ethics
+
+ machine learning poses a host of ethical_questions systems which are trained on datasets_collected with biases_may exhibit_these biases_upon use_thus digitizing_cultural prejudices_responsible collection of data thus is a critical_part of machine learning
+
+ because_language contains_biases machines trained on language_corpora will_necessarily also learn bias
+
+ see machine ethics for additional_information
+ machine learning
+ from wikipedia the free_encyclopedia
+
+ machine learning is the subfield of computer_science that gives_computers the ability to learn without_being explicitly_programmed evolved from the study of pattern_recognition and computational learning theory in artificial_intelligence machine learning explores the study and construction of algorithms that can learn from and make_predictions on data such algorithms overcome_following strictly_static program_instructions by making data driven_predictions or decisions_through building a model from sample_inputs machine learning is employed in a range of computing tasks where_designing and programming_explicit algorithms with good performance is difficult or infeasible_example applications include spam_filtering detection of network_intruders or malicious_insiders working_towards a data breach_optical character_recognition ocr_search engines and computer_vision
+
+ machine learning is closely_related to and often_overlaps with computational statistics which also focuses in predictionmaking_through the use of computers it has_strong ties to mathematical_optimization which_delivers methods theory and application_domains to the field machine learning is sometimes_conflated with data mining where the latter_subfield focuses more on exploratory data analysis and is known as unsupervised_learningvii machine learning can also be unsupervised and be used to learn and establish_baseline behavioral_profiles for various_entities and then used to find_meaningful anomalies
+
+ within the field of data analytics machine learning is a method used to devise_complex models and algorithms that lend_themselves to prediction in commercial_use this is known as predictive_analytics these_analytical models allow_researchers data scientists_engineers and analysts to produce_reliable repeatable_decisions and results and uncover_hidden insights_through learning from historical_relationships and trends in the data
+
+ overview
+
+ tom_m mitchell_provided a widely_quoted more_formal definition a computer program is said to learn from experience_e with_respect to some class of tasks_t and performance_measure p_if its performance at tasks in t as measured by p_improves with experience_e this definition is notable for its defining machine learning in fundamentally_operational rather_than cognitive_terms thus_following alan_turings proposal in his_paper computing_machinery and intelligence that the question_can machines_think be replaced with the question_can machines do_what we as thinking_entities can do in the proposal_he explores the various_characteristics that could be possessed by a thinking machine and the various_implications in constructing_one
+ types of problems and tasks
+
+ machine learning tasks are typically_classified into_three broad_categories depending on the nature of the learning signal or feedback_available to a learning system these are
+
+ supervised learning the computer is presented with example inputs and their desired_outputs given by a teacher and the goal is to learn a general rule that maps inputs to outputs
+ unsupervised learning no_labels are given to the learning algorithm_leaving it on its_own to find structure in its input unsupervised learning can be a goal in itself_discovering hidden_patterns in data or a means_towards an end_feature learning
+ reinforcement learning a computer program_interacts with a dynamic_environment in which it must_perform a certain goal such as driving a vehicle or playing a game_against an opponent the program is provided_feedback in terms of rewards and punishments as it navigates_its problem space
+
+ between supervised and unsupervised learning is semisupervised learning where the teacher_gives an incomplete training signal a training set with some often many of the target_outputs missing_transduction is a special_case of this_principle where the entire set of problem instances is known at learning time_except that part of the targets are missing
+
+ among_other categories of machine learning problems learning to learn learns its_own inductive_bias based_on previous_experience developmental learning elaborated for robot learning generates_its own_sequences also called_curriculum of learning situations to cumulatively_acquire repertoires of novel_skills through_autonomous selfexploration and social_interaction with human_teachers and using_guidance mechanisms_such as active learning maturation_motor synergies and imitation
+
+ another_categorization of machine learning tasks_arises when_one considers the desired_output of a machinelearned_system
+
+ in classification inputs are divided_into two or more classes and the learner_must produce a model that assigns_unseen inputs to one or more_multilabel classification of these classes this is typically_tackled in a supervised way spam_filtering is an example of classification where the inputs are email or other_messages and the classes are spam and not spam
+ in regression also a supervised problem the outputs are continuous_rather than_discrete
+ in clustering a set of inputs is to be divided_into groups_unlike in classification the groups are not known_beforehand making this typically an unsupervised task
+ density_estimation finds the distribution of inputs in some space
+ dimensionality_reduction simplifies_inputs by mapping_them into a lowerdimensional_space topic_modeling is a related problem where a program is given a list of human language_documents and is tasked to find out which documents_cover similar_topics
+
+ history and relationships to other fields
+
+ as a scientific_endeavour machine learning grew_out of the quest for artificial_intelligence already in the early_days of ai as an academic_discipline some researchers were_interested in having_machines learn from data they_attempted to approach the problem with various_symbolic methods as well as what_were then_termed neural_networks these were_mostly perceptrons and other models that were_later found to be reinventions of the generalized_linear models of statistics probabilistic_reasoning was also employed_especially in automated_medical diagnosis
+
+ however an increasing_emphasis on the logical_knowledgebased approach_caused a rift_between ai and machine learning probabilistic systems were_plagued by theoretical and practical_problems of data acquisition and representation by expert_systems had_come to dominate_ai and statistics was out of favor_work on symbolicknowledgebased learning did_continue within ai leading to inductive_logic programming but the more statistical_line of research was_now outside the field of ai_proper in pattern_recognition and information_retrieval neural_networks research_had been_abandoned by ai and computer_science around the same time this line_too was_continued outside the aics_field as connectionism by researchers from other_disciplines including_hopfield rumelhart and hinton_their main_success came in the mids with the reinvention of backpropagation
+
+ machine learning reorganized as a separate field_started to flourish in the s the field changed its goal from achieving_artificial intelligence to tackling_solvable problems of a practical_nature it shifted_focus away from the symbolic_approaches it had_inherited from ai and toward_methods and models_borrowed from statistics and probability theory it also_benefited from the increasing_availability of digitized_information and the possibility to distribute that via the internet
+
+ machine learning and data mining often_employ the same methods and overlap_significantly but while machine learning focuses on prediction_based on known properties_learned from the training data data mining focuses on the discovery of previously_unknown properties in the data this is the analysis step of knowledge discovery in databases data mining uses many machine learning methods but with different_goals on the other_hand machine learning also_employs data mining methods as unsupervised learning or as a preprocessing_step to improve learner accuracy_much of the confusion_between these two research_communities which do often have separate_conferences and separate_journals ecml_pkdd being a major_exception comes from the basic_assumptions they_work with in machine learning performance is usually_evaluated with_respect to the ability to reproduce_known knowledge while in knowledge discovery and data mining kdd the key_task is the discovery of previously_unknown knowledge evaluated with_respect to known knowledge an uninformed_unsupervised method will_easily be outperformed by other supervised methods while in a typical_kdd task supervised methods cannot be used_due to the unavailability of training data
+
+ machine learning also has_intimate ties to optimization many learning problems are formulated as minimization of some loss function on a training set of examples loss_functions express the discrepancy_between the predictions of the model being trained and the actual_problem instances for example in classification one_wants to assign a label to instances and models are trained to correctly_predict the preassigned_labels of a set examples the difference_between the two fields_arises from the goal of generalization while optimization algorithms can minimize the loss on a training set machine learning is concerned with minimizing the loss on unseen_samples
+ relation to statistics
+
+ machine learning and statistics are closely_related fields_according to michael_i jordan the ideas of machine learning from methodological_principles to theoretical_tools have had a long_prehistory in statistics he also_suggested the term data science as a placeholder to call the overall_field
+
+ leo_breiman distinguished_two statistical_modelling paradigms data model and algorithmic model wherein_algorithmic model means more or less the machine learning algorithms like_random forest
+
+ some_statisticians have_adopted methods from machine learning leading to a combined_field that they_call statistical learning
+ theory
+
+ a core_objective of a learner is to generalize from its experience generalization in this context is the ability of a learning machine to perform_accurately on new unseen_examplestasks after_having experienced a learning data set the training examples come from some generally_unknown probability_distribution considered_representative of the space of occurrences and the learner has to build a general model about this space that enables it to produce_sufficiently accurate_predictions in new_cases
+
+ the computational analysis of machine learning algorithms and their performance is a branch of theoretical computer_science known as computational learning theory because training sets are finite and the future is uncertain learning theory usually_does not_yield guarantees of the performance of algorithms instead_probabilistic bounds on the performance are quite_common the biasvariance_decomposition is one way to quantify_generalization error
+
+ for the best performance in the context of generalization the complexity of the hypothesis_should match the complexity of the function_underlying the data if the hypothesis is less_complex than the function then the model has_underfit the data if the complexity of the model is increased in response_then the training error_decreases but if the hypothesis is too_complex then the model is subject to overfitting and generalization will be poorer
+
+ in addition to performance bounds computational learning theorists_study the time_complexity and feasibility of learning in computational learning theory a computation is considered_feasible if it can be done in polynomial_time there are two_kinds of time_complexity results positive results_show that a certain_class of functions can be learned in polynomial_time negative results_show that certain classes cannot be learned in polynomial_time
+ approaches
+ decision_tree learning
+
+ decision_tree learning uses a decision_tree as a predictive model which maps_observations about an item to conclusions_about the items_target value
+ association_rule learning
+
+ association_rule learning is a method for discovering_interesting relations_between variables in large_databases
+ artificial_neural networks
+
+ an artificial_neural network_ann learning algorithm usually_called neural_network nn is a learning algorithm that is inspired by the structure and functional_aspects of biological_neural networks_computations are structured in terms of an interconnected_group of artificial_neurons processing_information using a connectionist_approach to computation_modern neural_networks are nonlinear_statistical data modeling_tools they are usually used to model complex relationships_between inputs and outputs to find patterns in data or to capture the statistical structure in an unknown_joint probability_distribution between observed_variables
+ deep learning
+
+ falling_hardware prices and the development of gpus for personal_use in the last_few years_have contributed to the development of the concept of deep learning which_consists of multiple_hidden layers in an artificial_neural network this approach_tries to model the way the human_brain processes_light and sound_into vision and hearing_some successful_applications of deep learning are computer_vision and speech recognition
+ inductive_logic programming
+
+ inductive_logic programming ilp is an approach to rule learning using logic_programming as a uniform_representation for input examples background_knowledge and hypotheses given an encoding of the known background_knowledge and a set of examples represented as a logical_database of facts an ilp_system will_derive a hypothesized_logic program that entails_all positive and no_negative examples inductive programming is a related field that considers_any kind of programming_languages for representing_hypotheses and not_only logic_programming such as functional_programs
+ support_vector machines
+
+ support_vector machines_svms are a set of related supervised learning methods used for classification and regression given a set of training examples each_marked as belonging to one of two categories an svm training algorithm_builds a model that predicts_whether a new example_falls into one_category or the other
+ clustering
+
+ cluster_analysis is the assignment of a set of observations into subsets_called clusters_so that observations_within the same_cluster are similar_according to some_predesignated criterion or criteria_while observations_drawn from different_clusters are dissimilar_different clustering_techniques make different_assumptions on the structure of the data often defined by some similarity_metric and evaluated for example by internal_compactness similarity between_members of the same_cluster and separation_between different_clusters other methods are based_on estimated_density and graph_connectivity clustering is a method of unsupervised learning and a common_technique for statistical data analysis
+ bayesian networks
+
+ a bayesian_network belief_network or directed_acyclic graphical model is a probabilistic_graphical model that represents a set of random_variables and their_conditional independencies_via a directed_acyclic graph_dag for example a bayesian_network could_represent the probabilistic relationships_between diseases and symptoms given symptoms the network can be used to compute the probabilities of the presence of various_diseases efficient algorithms exist that perform_inference and learning
+ reinforcement learning
+
+ reinforcement learning is concerned with how an agent_ought to take_actions in an environment_so as to maximize_some notion of longterm_reward reinforcement learning algorithms_attempt to find a policy that maps_states of the world to the actions the agent_ought to take in those_states reinforcement learning differs from the supervised learning problem in that correct_inputoutput pairs are never_presented nor_suboptimal actions_explicitly corrected
+ representation learning
+
+ several learning algorithms mostly unsupervised learning algorithms_aim at_discovering better_representations of the inputs provided_during training classical_examples include_principal components_analysis and cluster_analysis representation learning algorithms often attempt to preserve the information in their input but_transform it in a way that makes it useful_often as a preprocessing_step before_performing classification or predictions_allowing to reconstruct the inputs_coming from the unknown data generating_distribution while not being_necessarily faithful for configurations that are implausible_under that distribution
+
+ manifold learning algorithms_attempt to do_so under the constraint that the learned_representation is lowdimensional sparse_coding algorithms_attempt to do_so under the constraint that the learned_representation is sparse has many_zeros multilinear_subspace learning algorithms_aim to learn lowdimensional_representations directly from tensor_representations for multidimensional data without_reshaping them_into highdimensional_vectors deep learning algorithms discover_multiple levels of representation or a hierarchy of features with higherlevel_more abstract_features defined in terms of or generating_lowerlevel features it has_been argued that an intelligent machine is one that learns a representation that disentangles the underlying_factors of variation that explain the observed data
+ similarity and metric learning
+
+ in this problem the learning machine is given pairs of examples that are considered similar and pairs of less similar_objects it then_needs to learn a similarity function or a distance_metric function that can predict if new_objects are similar it is sometimes used in recommendation systems
+ sparse_dictionary learning
+
+ in this method a datum is represented as a linear_combination of basis_functions and the coefficients are assumed to be sparse_let x be a ddimensional_datum d be a d by n_matrix where each_column of d_represents a basis_function r is the coefficient to represent_x using d_mathematically sparse_dictionary learning means_solving x_≈ d r_displaystyle xapprox_dr displaystyle_xapprox dr where r is sparse generally_speaking n is assumed to be larger_than d to allow the freedom for a sparse representation
+
+ learning a dictionary along with sparse representations is strongly_nphard and also difficult to solve_approximately a popular_heuristic method for sparse_dictionary learning is ksvd
+
+ sparse_dictionary learning has_been applied in several_contexts in classification the problem is to determine_which classes a previously unseen datum_belongs to suppose a dictionary for each_class has already been built then a new datum is associated with the class such that its best_sparsely represented by the corresponding_dictionary sparse_dictionary learning has also been_applied in image_denoising the key_idea is that a clean_image patch can be sparsely_represented by an image dictionary but the noise_cannot
+ genetic algorithms
+
+ a genetic_algorithm ga is a search_heuristic that mimics the process of natural_selection and uses methods such as mutation and crossover to generate_new genotype in the hope of finding_good solutions to a given problem in machine learning genetic algorithms found some uses in the s and s_vice versa machine learning techniques have been used to improve the performance of genetic and evolutionary algorithms
+ rulebased machine learning
+
+ rulebased machine learning is a general_term for any machine learning method that identifies_learns or evolves_rules’ to store_manipulate or apply_knowledge the defining_characteristic of a rulebased machine learner is the identification and utilization of a set of relational_rules that collectively_represent the knowledge_captured by the system this is in contrast to other machine learners that commonly_identify a singular model that can be universally_applied to any_instance in order to make a prediction rulebased machine learning approaches_include learning classifier_systems association_rule learning and artificial_immune systems
+ learning classifier_systems
+
+ learning classifier_systems lcs are a family of rulebased machine learning algorithms that combine a discovery_component eg_typically a genetic_algorithm with a learning component_performing either_supervised learning reinforcement learning or unsupervised learning they_seek to identify a set of contextdependent_rules that collectively_store and apply_knowledge in a piecewise_manner in order to make_predictions
+ applications
+
+ applications for machine learning include
+
+ adaptive_websites
+ affective_computing
+ bioinformatics
+ brainmachine_interfaces
+ cheminformatics
+ classifying_dna sequences
+ computational_anatomy
+ computer_vision including_object recognition
+ detecting_credit card_fraud
+ game_playing
+ information_retrieval
+ internet_fraud detection
+ marketing
+ machine perception
+ medical_diagnosis
+ economics
+ natural_language processing
+ natural_language understanding
+ optimization and metaheuristic
+ online_advertising
+ recommender_systems
+ robot_locomotion
+ search_engines
+ sentiment_analysis or opinion_mining
+ sequence_mining
+ software_engineering
+ speech and handwriting_recognition
+ financial_market analysis
+ structural_health monitoring
+ syntactic_pattern recognition
+ user_behavior analytics
+ translation
+
+ in the online_movie company_netflix held the first_netflix prize_competition to find a program to better_predict user_preferences and improve the accuracy on its_existing cinematch_movie recommendation algorithm by at_least a joint_team made_up of researchers from att_labsresearch in collaboration with the teams_big chaos and pragmatic_theory built an ensemble model to win the grand_prize in for million_shortly after the prize was_awarded netflix_realized that viewers_ratings were not the best_indicators of their_viewing patterns_everything is a recommendation and they_changed their recommendation_engine accordingly
+
+ in the wall_street journal_wrote about_money management_firm rebellion_researchs use of machine learning to predict_economic movements the article_describes rebellion_researchs prediction of the financial_crisis and economic_recovery
+
+ in cofounder of sun_microsystems vinod_khosla predicted that of medical_doctors jobs_would be lost in the next_two decades to automated machine learning medical_diagnostic software
+
+ in it has_been reported that a machine learning algorithm has_been applied in art_history to study_fine art_paintings and that it may_have revealed_previously unrecognized_influences between_artists
+ model assessments
+
+ classification machine learning models can be validated by accuracy_estimation techniques_like the holdout method which splits the data in a training and test_set conventionally training set and test_set designation and evaluates the performance of the training model on the test_set in comparison the nfoldcrossvalidation_method randomly_splits the data in k_subsets where the k_instances of the data are used to train the model while the kth_instance is used to test the predictive_ability of the training model in addition to the holdout and crossvalidation_methods bootstrap_which samples_n instances with replacement from the dataset can be used to assess model accuracy in addition to accuracy_sensitivity and specificity_true positive_rate tpr and true_negative rate_tnr respectively can provide_modes of model assessment_similarly false_positive rate_fpr as well as the false_negative rate_fnr can be computed_receiver operating_characteristic roc_along with the accompanying_area under the roc_curve auc_offer additional_tools for classification model assessment_higher auc is associated with a better_performing model
+ ethics
+
+ machine learning poses a host of ethical_questions systems which are trained on datasets_collected with biases_may exhibit_these biases_upon use_thus digitizing_cultural prejudices_responsible collection of data thus is a critical_part of machine learning
+
+ because_language contains_biases machines trained on language_corpora will_necessarily also learn bias
+
+ see machine ethics for additional_information
+ machine learning
+ from wikipedia the free_encyclopedia
+
+ machine learning is the subfield of computer_science that gives_computers the ability to learn without_being explicitly_programmed evolved from the study of pattern_recognition and computational learning theory in artificial_intelligence machine learning explores the study and construction of algorithms that can learn from and make_predictions on data such algorithms overcome_following strictly_static program_instructions by making data driven_predictions or decisions_through building a model from sample_inputs machine learning is employed in a range of computing tasks where_designing and programming_explicit algorithms with good performance is difficult or infeasible_example applications include spam_filtering detection of network_intruders or malicious_insiders working_towards a data breach_optical character_recognition ocr_search engines and computer_vision
+
+ machine learning is closely_related to and often_overlaps with computational statistics which also focuses in predictionmaking_through the use of computers it has_strong ties to mathematical_optimization which_delivers methods theory and application_domains to the field machine learning is sometimes_conflated with data mining where the latter_subfield focuses more on exploratory data analysis and is known as unsupervised_learningvii machine learning can also be unsupervised and be used to learn and establish_baseline behavioral_profiles for various_entities and then used to find_meaningful anomalies
+
+ within the field of data analytics machine learning is a method used to devise_complex models and algorithms that lend_themselves to prediction in commercial_use this is known as predictive_analytics these_analytical models allow_researchers data scientists_engineers and analysts to produce_reliable repeatable_decisions and results and uncover_hidden insights_through learning from historical_relationships and trends in the data
+
+ overview
+
+ tom_m mitchell_provided a widely_quoted more_formal definition a computer program is said to learn from experience_e with_respect to some class of tasks_t and performance_measure p_if its performance at tasks in t as measured by p_improves with experience_e this definition is notable for its defining machine learning in fundamentally_operational rather_than cognitive_terms thus_following alan_turings proposal in his_paper computing_machinery and intelligence that the question_can machines_think be replaced with the question_can machines do_what we as thinking_entities can do in the proposal_he explores the various_characteristics that could be possessed by a thinking machine and the various_implications in constructing_one
+ types of problems and tasks
+
+ machine learning tasks are typically_classified into_three broad_categories depending on the nature of the learning signal or feedback_available to a learning system these are
+
+ supervised learning the computer is presented with example inputs and their desired_outputs given by a teacher and the goal is to learn a general rule that maps inputs to outputs
+ unsupervised learning no_labels are given to the learning algorithm_leaving it on its_own to find structure in its input unsupervised learning can be a goal in itself_discovering hidden_patterns in data or a means_towards an end_feature learning
+ reinforcement learning a computer program_interacts with a dynamic_environment in which it must_perform a certain goal such as driving a vehicle or playing a game_against an opponent the program is provided_feedback in terms of rewards and punishments as it navigates_its problem space
+
+ between supervised and unsupervised learning is semisupervised learning where the teacher_gives an incomplete training signal a training set with some often many of the target_outputs missing_transduction is a special_case of this_principle where the entire set of problem instances is known at learning time_except that part of the targets are missing
+
+ among_other categories of machine learning problems learning to learn learns its_own inductive_bias based_on previous_experience developmental learning elaborated for robot learning generates_its own_sequences also called_curriculum of learning situations to cumulatively_acquire repertoires of novel_skills through_autonomous selfexploration and social_interaction with human_teachers and using_guidance mechanisms_such as active learning maturation_motor synergies and imitation
+
+ another_categorization of machine learning tasks_arises when_one considers the desired_output of a machinelearned_system
+
+ in classification inputs are divided_into two or more classes and the learner_must produce a model that assigns_unseen inputs to one or more_multilabel classification of these classes this is typically_tackled in a supervised way spam_filtering is an example of classification where the inputs are email or other_messages and the classes are spam and not spam
+ in regression also a supervised problem the outputs are continuous_rather than_discrete
+ in clustering a set of inputs is to be divided_into groups_unlike in classification the groups are not known_beforehand making this typically an unsupervised task
+ density_estimation finds the distribution of inputs in some space
+ dimensionality_reduction simplifies_inputs by mapping_them into a lowerdimensional_space topic_modeling is a related problem where a program is given a list of human language_documents and is tasked to find out which documents_cover similar_topics
+
+ history and relationships to other fields
+
+ as a scientific_endeavour machine learning grew_out of the quest for artificial_intelligence already in the early_days of ai as an academic_discipline some researchers were_interested in having_machines learn from data they_attempted to approach the problem with various_symbolic methods as well as what_were then_termed neural_networks these were_mostly perceptrons and other models that were_later found to be reinventions of the generalized_linear models of statistics probabilistic_reasoning was also employed_especially in automated_medical diagnosis
+
+ however an increasing_emphasis on the logical_knowledgebased approach_caused a rift_between ai and machine learning probabilistic systems were_plagued by theoretical and practical_problems of data acquisition and representation by expert_systems had_come to dominate_ai and statistics was out of favor_work on symbolicknowledgebased learning did_continue within ai leading to inductive_logic programming but the more statistical_line of research was_now outside the field of ai_proper in pattern_recognition and information_retrieval neural_networks research_had been_abandoned by ai and computer_science around the same time this line_too was_continued outside the aics_field as connectionism by researchers from other_disciplines including_hopfield rumelhart and hinton_their main_success came in the mids with the reinvention of backpropagation
+
+ machine learning reorganized as a separate field_started to flourish in the s the field changed its goal from achieving_artificial intelligence to tackling_solvable problems of a practical_nature it shifted_focus away from the symbolic_approaches it had_inherited from ai and toward_methods and models_borrowed from statistics and probability theory it also_benefited from the increasing_availability of digitized_information and the possibility to distribute that via the internet
+
+ machine learning and data mining often_employ the same methods and overlap_significantly but while machine learning focuses on prediction_based on known properties_learned from the training data data mining focuses on the discovery of previously_unknown properties in the data this is the analysis step of knowledge discovery in databases data mining uses many machine learning methods but with different_goals on the other_hand machine learning also_employs data mining methods as unsupervised learning or as a preprocessing_step to improve learner accuracy_much of the confusion_between these two research_communities which do often have separate_conferences and separate_journals ecml_pkdd being a major_exception comes from the basic_assumptions they_work with in machine learning performance is usually_evaluated with_respect to the ability to reproduce_known knowledge while in knowledge discovery and data mining kdd the key_task is the discovery of previously_unknown knowledge evaluated with_respect to known knowledge an uninformed_unsupervised method will_easily be outperformed by other supervised methods while in a typical_kdd task supervised methods cannot be used_due to the unavailability of training data
+
+ machine learning also has_intimate ties to optimization many learning problems are formulated as minimization of some loss function on a training set of examples loss_functions express the discrepancy_between the predictions of the model being trained and the actual_problem instances for example in classification one_wants to assign a label to instances and models are trained to correctly_predict the preassigned_labels of a set examples the difference_between the two fields_arises from the goal of generalization while optimization algorithms can minimize the loss on a training set machine learning is concerned with minimizing the loss on unseen_samples
+ relation to statistics
+
+ machine learning and statistics are closely_related fields_according to michael_i jordan the ideas of machine learning from methodological_principles to theoretical_tools have had a long_prehistory in statistics he also_suggested the term data science as a placeholder to call the overall_field
+
+ leo_breiman distinguished_two statistical_modelling paradigms data model and algorithmic model wherein_algorithmic model means more or less the machine learning algorithms like_random forest
+
+ some_statisticians have_adopted methods from machine learning leading to a combined_field that they_call statistical learning
+ theory
+
+ a core_objective of a learner is to generalize from its experience generalization in this context is the ability of a learning machine to perform_accurately on new unseen_examplestasks after_having experienced a learning data set the training examples come from some generally_unknown probability_distribution considered_representative of the space of occurrences and the learner has to build a general model about this space that enables it to produce_sufficiently accurate_predictions in new_cases
+
+ the computational analysis of machine learning algorithms and their performance is a branch of theoretical computer_science known as computational learning theory because training sets are finite and the future is uncertain learning theory usually_does not_yield guarantees of the performance of algorithms instead_probabilistic bounds on the performance are quite_common the biasvariance_decomposition is one way to quantify_generalization error
+
+ for the best performance in the context of generalization the complexity of the hypothesis_should match the complexity of the function_underlying the data if the hypothesis is less_complex than the function then the model has_underfit the data if the complexity of the model is increased in response_then the training error_decreases but if the hypothesis is too_complex then the model is subject to overfitting and generalization will be poorer
+
+ in addition to performance bounds computational learning theorists_study the time_complexity and feasibility of learning in computational learning theory a computation is considered_feasible if it can be done in polynomial_time there are two_kinds of time_complexity results positive results_show that a certain_class of functions can be learned in polynomial_time negative results_show that certain classes cannot be learned in polynomial_time
+ approaches
+ decision_tree learning
+
+ decision_tree learning uses a decision_tree as a predictive model which maps_observations about an item to conclusions_about the items_target value
+ association_rule learning
+
+ association_rule learning is a method for discovering_interesting relations_between variables in large_databases
+ artificial_neural networks
+
+ an artificial_neural network_ann learning algorithm usually_called neural_network nn is a learning algorithm that is inspired by the structure and functional_aspects of biological_neural networks_computations are structured in terms of an interconnected_group of artificial_neurons processing_information using a connectionist_approach to computation_modern neural_networks are nonlinear_statistical data modeling_tools they are usually used to model complex relationships_between inputs and outputs to find patterns in data or to capture the statistical structure in an unknown_joint probability_distribution between observed_variables
+ deep learning
+
+ falling_hardware prices and the development of gpus for personal_use in the last_few years_have contributed to the development of the concept of deep learning which_consists of multiple_hidden layers in an artificial_neural network this approach_tries to model the way the human_brain processes_light and sound_into vision and hearing_some successful_applications of deep learning are computer_vision and speech recognition
+ inductive_logic programming
+
+ inductive_logic programming ilp is an approach to rule learning using logic_programming as a uniform_representation for input examples background_knowledge and hypotheses given an encoding of the known background_knowledge and a set of examples represented as a logical_database of facts an ilp_system will_derive a hypothesized_logic program that entails_all positive and no_negative examples inductive programming is a related field that considers_any kind of programming_languages for representing_hypotheses and not_only logic_programming such as functional_programs
+ support_vector machines
+
+ support_vector machines_svms are a set of related supervised learning methods used for classification and regression given a set of training examples each_marked as belonging to one of two categories an svm training algorithm_builds a model that predicts_whether a new example_falls into one_category or the other
+ clustering
+
+ cluster_analysis is the assignment of a set of observations into subsets_called clusters_so that observations_within the same_cluster are similar_according to some_predesignated criterion or criteria_while observations_drawn from different_clusters are dissimilar_different clustering_techniques make different_assumptions on the structure of the data often defined by some similarity_metric and evaluated for example by internal_compactness similarity between_members of the same_cluster and separation_between different_clusters other methods are based_on estimated_density and graph_connectivity clustering is a method of unsupervised learning and a common_technique for statistical data analysis
+ bayesian networks
+
+ a bayesian_network belief_network or directed_acyclic graphical model is a probabilistic_graphical model that represents a set of random_variables and their_conditional independencies_via a directed_acyclic graph_dag for example a bayesian_network could_represent the probabilistic relationships_between diseases and symptoms given symptoms the network can be used to compute the probabilities of the presence of various_diseases efficient algorithms exist that perform_inference and learning
+ reinforcement learning
+
+ reinforcement learning is concerned with how an agent_ought to take_actions in an environment_so as to maximize_some notion of longterm_reward reinforcement learning algorithms_attempt to find a policy that maps_states of the world to the actions the agent_ought to take in those_states reinforcement learning differs from the supervised learning problem in that correct_inputoutput pairs are never_presented nor_suboptimal actions_explicitly corrected
+ representation learning
+
+ several learning algorithms mostly unsupervised learning algorithms_aim at_discovering better_representations of the inputs provided_during training classical_examples include_principal components_analysis and cluster_analysis representation learning algorithms often attempt to preserve the information in their input but_transform it in a way that makes it useful_often as a preprocessing_step before_performing classification or predictions_allowing to reconstruct the inputs_coming from the unknown data generating_distribution while not being_necessarily faithful for configurations that are implausible_under that distribution
+
+ manifold learning algorithms_attempt to do_so under the constraint that the learned_representation is lowdimensional sparse_coding algorithms_attempt to do_so under the constraint that the learned_representation is sparse has many_zeros multilinear_subspace learning algorithms_aim to learn lowdimensional_representations directly from tensor_representations for multidimensional data without_reshaping them_into highdimensional_vectors deep learning algorithms discover_multiple levels of representation or a hierarchy of features with higherlevel_more abstract_features defined in terms of or generating_lowerlevel features it has_been argued that an intelligent machine is one that learns a representation that disentangles the underlying_factors of variation that explain the observed data
+ similarity and metric learning
+
+ in this problem the learning machine is given pairs of examples that are considered similar and pairs of less similar_objects it then_needs to learn a similarity function or a distance_metric function that can predict if new_objects are similar it is sometimes used in recommendation systems
+ sparse_dictionary learning
+
+ in this method a datum is represented as a linear_combination of basis_functions and the coefficients are assumed to be sparse_let x be a ddimensional_datum d be a d by n_matrix where each_column of d_represents a basis_function r is the coefficient to represent_x using d_mathematically sparse_dictionary learning means_solving x_≈ d r_displaystyle xapprox_dr displaystyle_xapprox dr where r is sparse generally_speaking n is assumed to be larger_than d to allow the freedom for a sparse representation
+
+ learning a dictionary along with sparse representations is strongly_nphard and also difficult to solve_approximately a popular_heuristic method for sparse_dictionary learning is ksvd
+
+ sparse_dictionary learning has_been applied in several_contexts in classification the problem is to determine_which classes a previously unseen datum_belongs to suppose a dictionary for each_class has already been built then a new datum is associated with the class such that its best_sparsely represented by the corresponding_dictionary sparse_dictionary learning has also been_applied in image_denoising the key_idea is that a clean_image patch can be sparsely_represented by an image dictionary but the noise_cannot
+ genetic algorithms
+
+ a genetic_algorithm ga is a search_heuristic that mimics the process of natural_selection and uses methods such as mutation and crossover to generate_new genotype in the hope of finding_good solutions to a given problem in machine learning genetic algorithms found some uses in the s and s_vice versa machine learning techniques have been used to improve the performance of genetic and evolutionary algorithms
+ rulebased machine learning
+
+ rulebased machine learning is a general_term for any machine learning method that identifies_learns or evolves_rules’ to store_manipulate or apply_knowledge the defining_characteristic of a rulebased machine learner is the identification and utilization of a set of relational_rules that collectively_represent the knowledge_captured by the system this is in contrast to other machine learners that commonly_identify a singular model that can be universally_applied to any_instance in order to make a prediction rulebased machine learning approaches_include learning classifier_systems association_rule learning and artificial_immune systems
+ learning classifier_systems
+
+ learning classifier_systems lcs are a family of rulebased machine learning algorithms that combine a discovery_component eg_typically a genetic_algorithm with a learning component_performing either_supervised learning reinforcement learning or unsupervised learning they_seek to identify a set of contextdependent_rules that collectively_store and apply_knowledge in a piecewise_manner in order to make_predictions
+ applications
+
+ applications for machine learning include
+
+ adaptive_websites
+ affective_computing
+ bioinformatics
+ brainmachine_interfaces
+ cheminformatics
+ classifying_dna sequences
+ computational_anatomy
+ computer_vision including_object recognition
+ detecting_credit card_fraud
+ game_playing
+ information_retrieval
+ internet_fraud detection
+ marketing
+ machine perception
+ medical_diagnosis
+ economics
+ natural_language processing
+ natural_language understanding
+ optimization and metaheuristic
+ online_advertising
+ recommender_systems
+ robot_locomotion
+ search_engines
+ sentiment_analysis or opinion_mining
+ sequence_mining
+ software_engineering
+ speech and handwriting_recognition
+ financial_market analysis
+ structural_health monitoring
+ syntactic_pattern recognition
+ user_behavior analytics
+ translation
+
+ in the online_movie company_netflix held the first_netflix prize_competition to find a program to better_predict user_preferences and improve the accuracy on its_existing cinematch_movie recommendation algorithm by at_least a joint_team made_up of researchers from att_labsresearch in collaboration with the teams_big chaos and pragmatic_theory built an ensemble model to win the grand_prize in for million_shortly after the prize was_awarded netflix_realized that viewers_ratings were not the best_indicators of their_viewing patterns_everything is a recommendation and they_changed their recommendation_engine accordingly
+
+ in the wall_street journal_wrote about_money management_firm rebellion_researchs use of machine learning to predict_economic movements the article_describes rebellion_researchs prediction of the financial_crisis and economic_recovery
+
+ in cofounder of sun_microsystems vinod_khosla predicted that of medical_doctors jobs_would be lost in the next_two decades to automated machine learning medical_diagnostic software
+
+ in it has_been reported that a machine learning algorithm has_been applied in art_history to study_fine art_paintings and that it may_have revealed_previously unrecognized_influences between_artists
+ model assessments
+
+ classification machine learning models can be validated by accuracy_estimation techniques_like the holdout method which splits the data in a training and test_set conventionally training set and test_set designation and evaluates the performance of the training model on the test_set in comparison the nfoldcrossvalidation_method randomly_splits the data in k_subsets where the k_instances of the data are used to train the model while the kth_instance is used to test the predictive_ability of the training model in addition to the holdout and crossvalidation_methods bootstrap_which samples_n instances with replacement from the dataset can be used to assess model accuracy in addition to accuracy_sensitivity and specificity_true positive_rate tpr and true_negative rate_tnr respectively can provide_modes of model assessment_similarly false_positive rate_fpr as well as the false_negative rate_fnr can be computed_receiver operating_characteristic roc_along with the accompanying_area under the roc_curve auc_offer additional_tools for classification model assessment_higher auc is associated with a better_performing model
+ ethics
+
+ machine learning poses a host of ethical_questions systems which are trained on datasets_collected with biases_may exhibit_these biases_upon use_thus digitizing_cultural prejudices_responsible collection of data thus is a critical_part of machine learning
+
+ because_language contains_biases machines trained on language_corpora will_necessarily also learn bias
+
+ see machine ethics for additional_information
+ operating_characteristic roc_along with the accompanying_area under the roc_curve auc_offer additional_tools for classification model assessment_higher auc is associated with a better_performing model
+ ethics
+
+ machine learning poses a host of ethical_questions systems which are trained on datasets_collected with biases_may exhibit_these biases_upon use_thus digitizing_cultural prejudices_responsible collection of data thus is a critical_part of machine learning
+
+ because_language contains_biases machines trained on language_corpora will_necessarily also learn bias
+
+ see machine ethics for additional_information
+ llected with biases_may exhibit_these biases_upon use_thus digitizing_cultural prejudices_responsible collection of data thus is a critical_part of machine learning
+
+ because_language contains_biases machines trained on language_corpora will_necessarily also learn bias
+
+ see machine ethics for additional_information
+ additional_information
