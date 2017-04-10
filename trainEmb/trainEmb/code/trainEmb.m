@@ -65,7 +65,7 @@ params.ksz = params.n+1;
 
 %% Load vocab
 fid = fopen(vocabFile,'r');
-fileLines = textscan(fid, '%s', 'delimiter', '\n', 'bufsize', 100000);
+fileLines = textscan(fid, '%s', 'delimiter', '\n');
 fclose(fid);
 fileLines=fileLines{1};
 
